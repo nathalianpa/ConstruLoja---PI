@@ -23,14 +23,4 @@ public class Cliente {
         this.telefone = telefone;
         this.sexo = sexo;
     }
-
-    @Override
-    public String toString() {
-        return String.format("Nome: %s <br/> %s%s <br/> %s%s <br/> %s%s <br/> %s%s <br/> %s%s", getNome(), 
-                             "Email: ", getEmail(),
-                             "CPF: ", getCpf(), 
-                             "CEP: ", getCep(),
-                             "Telefone: ", getTelefone(),
-                             "Sexo: ", getSexo());
-    }
 }

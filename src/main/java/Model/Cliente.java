@@ -1,14 +1,5 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package Model;
 
-/**
- *
- * @author wmdbox
- */
+package Model;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -22,7 +13,7 @@ public class Cliente {
     private String cpf;
     private String cep;
     private String telefone;
-    private string sexo;
+    private String sexo;
 
     public Cliente(String nome, String email, String cpf, String cep, String telefone, String sexo) {
         this.nome = nome;
@@ -30,11 +21,15 @@ public class Cliente {
         this.cpf = cpf;
         this.cep = cep;
         this.telefone = telefone;
-        
     }
 
     @Override
     public String toString() {
-        return String.format("Nome: %s <br/> E-mail: %s <br/> CPF: %s", nome, email, cpf);
+        return String.format("Nome: %s%n", getNome(),
+                             "Email: %s%n", getEmail(),
+                             "Cpf: %s%n", getCpf(),
+                             "Cep: %s%n", getCep(),
+                             "Telefone: %s%n", getTelefone(),
+                             "Sexo: %s%n", getSexo());
     }
 }

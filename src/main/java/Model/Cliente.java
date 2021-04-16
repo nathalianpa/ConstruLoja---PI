@@ -21,15 +21,16 @@ public class Cliente {
         this.cpf = cpf;
         this.cep = cep;
         this.telefone = telefone;
+        this.sexo = sexo;
     }
 
     @Override
     public String toString() {
-        return String.format("Nome: %s%n", getNome(),
-                             "Email: %s%n", getEmail(),
-                             "Cpf: %s%n", getCpf(),
-                             "Cep: %s%n", getCep(),
-                             "Telefone: %s%n", getTelefone(),
-                             "Sexo: %s%n", getSexo());
+        return String.format("Nome: %s <br/> %s%s <br/> %s%s <br/> %s%s <br/> %s%s <br/> %s%s", getNome(), 
+                             "Email: ", getEmail(),
+                             "CPF: ", getCpf(), 
+                             "CEP: ", getCep(),
+                             "Telefone: ", getTelefone(),
+                             "Sexo: ", getSexo());
     }
 }

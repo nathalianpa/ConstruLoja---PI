@@ -6,7 +6,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Lista de Clientes</title>
     </head>
-    <body>
+    <body class="container">
         <c:import url="header.jsp"/>
         <h1>Clientes:</h1>
         <br>

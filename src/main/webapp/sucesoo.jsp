@@ -6,7 +6,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Sucesso</title>
     </head>
-    <body>
+    <body class="container">
         <h1>Operação realizada com sucesso!</h1>
         <br>
         <c:import url="footer.jsp"/>

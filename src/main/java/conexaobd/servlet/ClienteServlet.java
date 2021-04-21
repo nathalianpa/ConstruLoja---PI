@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package conexaobd.servlet;
 
 import conexaobd.dao.ClienteDAO;
@@ -14,13 +10,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- *
- * @author scarton
- */
 public class ClienteServlet extends HttpServlet {
 
-    
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -30,8 +21,5 @@ public class ClienteServlet extends HttpServlet {
         request.setAttribute("listaClientes", listaClientes);
         
         request.getRequestDispatcher("/listaClientes.jsp").forward(request, response);
-        
     }
-    
-
 }

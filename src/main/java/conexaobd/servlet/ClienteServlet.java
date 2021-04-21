@@ -3,10 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.senac.sp.conexaobd.servlet;
+package conexaobd.servlet;
 
-import br.senac.sp.conexaobd.dao.ClienteDAO;
-import br.senac.sp.conexaobd.entidade.Cliente;
+import conexaobd.dao.ClienteDAO;
+import conexaobd.entidade.Cliente;
 import java.io.IOException;
 import java.util.List;
 import javax.servlet.ServletException;

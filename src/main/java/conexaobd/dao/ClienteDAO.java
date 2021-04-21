@@ -1,7 +1,7 @@
-package br.senac.sp.conexaobd.dao;
+package conexaobd.dao;
 
-import br.senac.sp.conexaobd.conexao.Conexao;
-import br.senac.sp.conexaobd.entidade.Cliente;
+import conexaobd.conexao.Conexao;
+import conexaobd.entidade.Cliente;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;

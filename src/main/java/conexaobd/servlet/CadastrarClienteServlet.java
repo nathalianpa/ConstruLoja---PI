@@ -1,8 +1,8 @@
 
-package br.senac.sp.conexaobd.servlet;
+package conexaobd.servlet;
 
-import br.senac.sp.conexaobd.dao.ClienteDAO;
-import br.senac.sp.conexaobd.entidade.Cliente;
+import conexaobd.dao.ClienteDAO;
+import conexaobd.entidade.Cliente;
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;

@@ -1,4 +1,4 @@
-package br.senac.sp.conexaobd.entidade;
+package conexaobd.entidade;
 
 import lombok.Getter;
 import lombok.Setter;

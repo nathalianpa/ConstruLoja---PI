@@ -4,18 +4,11 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Sucesso</title>
     </head>
     <body>
-        <c:import url="header.jsp"/>
-        
-        <h1>Menu</h1>
-        
+        <h1>Operação realizada com sucesso!</h1>
         <br>
-        
-        <a href="ClienteServlet">Listar Clientes</a>
-        <br>
-        <br>
-        <a href="clientes/Cadastrar.jsp">Cadastrar Cliente</a>
+        <c:import url="footer.jsp"/>
     </body>
 </html>

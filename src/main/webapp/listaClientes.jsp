@@ -1,9 +1,3 @@
-<%-- 
-    Document   : listarClientes
-    Created on : 15/04/2021, 00:05:56
-    Author     : wmdbox
---%>
-
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>

@@ -1,5 +1,4 @@
-
-package Model;
+package br.senac.sp.conexaobd.entidade;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -22,5 +21,14 @@ public class Cliente {
         this.cep = cep;
         this.telefone = telefone;
         this.sexo = sexo;
+    }
+    
+    public boolean validarCPF() {
+        return true;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("Nome: %s <br/> Email: %s <br/> CPF: %s", nome, email, cpf);
     }
 }

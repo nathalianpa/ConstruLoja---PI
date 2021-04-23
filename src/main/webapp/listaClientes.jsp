@@ -35,6 +35,6 @@
         </table>
         
         <br>
-        <c:import url="footerMenor.jsp" />
+        <c:import url="footer.jsp" />
     </body>
 </html>

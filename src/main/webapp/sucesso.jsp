@@ -8,6 +8,7 @@
     </head>
     <body>
         <h1>Operação realizada com sucesso!</h1>
-        <a href="clientes/cadastrar.jsp">Voltar</a>
+        
+        <a href="<c:url value="/index.jsp"/>">Voltar</a>
     </body>
 </html>

@@ -9,6 +9,6 @@
     <body>
         <h1 style="color: red">Ops, algo deu errado!</h1>
         
-        <a href="clientes/cadastrar.jsp">Voltar</a>
+        <a href="<c:url value="/index.jsp"/>">Voltar</a>
     </body>
 </html>

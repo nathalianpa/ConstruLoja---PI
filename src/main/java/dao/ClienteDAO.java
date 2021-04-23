@@ -112,10 +112,10 @@ public class ClienteDAO {
             PreparedStatement ps = con.prepareStatement(query);
             ps.setString(1, cliente.getNome());
             ps.setString(2, cliente.getEmail());
-            ps.setString(3, cliente.getCpf());
-            ps.setString(4, cliente.getCep());
-            ps.setString(5, cliente.getTelefone());
-            ps.setString(6, cliente.getSexo());
+            ps.setString(3, cliente.getCep());
+            ps.setString(4, cliente.getTelefone());
+            ps.setString(5, cliente.getSexo());
+            ps.setString(6, cliente.getCpf());
             ps.executeUpdate();
         } catch (SQLException ex) {
             Logger.getLogger(ClienteDAO.class.getName()).log(Level.SEVERE, null, ex);

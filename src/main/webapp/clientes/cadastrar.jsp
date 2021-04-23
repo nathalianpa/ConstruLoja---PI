@@ -46,6 +46,6 @@
         </form>
         </c:if>
         
-        <c:import url="../footerMaior.jsp" />
+        <c:import url="../footer.jsp" />
     </body>
 </html>

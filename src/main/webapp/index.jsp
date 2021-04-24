@@ -4,16 +4,16 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Construloja</title>
     </head>
-    <body>
+    <body class="container">
         <c:import url="header.jsp" />
         
         <h1>Menu</h1>
         
-        <a href="ClienteServlet">Listar Clientes</a>
+        <a href="ClienteServlet" class="btn btn-primary">Listar Clientes</a>
         <br>
         <br>
-        <a href="clientes/cadastrar.jsp">Cadastrar Cliente</a>
+        <a href="clientes/cadastrar.jsp" class="btn btn-primary">Cadastrar Cliente</a>
     </body>
 </html>

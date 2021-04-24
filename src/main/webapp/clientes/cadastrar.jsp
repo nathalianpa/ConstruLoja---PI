@@ -6,43 +6,43 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Cadastrar cliente</title>
     </head>
-    <body>
+    <body class="container">
         <c:import url="../header.jsp" />
         
         <c:if test="${empty cliente}">
             <form action="CadastrarClienteServlet" method="POST">
-            <label>Nome</label><br>
-            <input type="text" name="nome" required="true"><br><br>
-            <label>Email</label><br>
-            <input type="text" name="email" required="true"><br><br>
-            <label>CPF</label><br>
-            <input type="text" name="cpf" required="true"><br><br>
-            <label>CEP</label><br>
-            <input type="text" name="cep" required="true"><br><br>
-            <label>Telefone</label><br>
-            <input type="text" name="telefone" required="true"><br><br>
-            <label>Sexo</label><br>
-            <input type="text" name="sexo" required="true"><br><br>
+            <label class="form-label">Nome</label><br>
+            <input type="text" class="form-control" name="nome" required="true"><br><br>
+            <label class="form-label">Email</label><br>
+            <input type="text" class="form-control" name="email" required="true"><br><br>
+            <label class="form-label">CPF</label><br>
+            <input type="text" class="form-control" name="cpf" required="true"><br><br>
+            <label class="form-label">CEP</label><br>
+            <input type="text" class="form-control" name="cep" required="true"><br><br>
+            <label class="form-label">Telefone</label><br>
+            <input type="text" class="form-control" name="telefone" required="true"><br><br>
+            <label class="form-label">Sexo</label><br>
+            <input type="text" class="form-control" name="sexo" required="true"><br><br>
             
-            <button type="submit">Cadastrar</button>
+            <button type="submit" class="btn btn-primary">Cadastrar</button>
         </form>
         </c:if>
         <c:if test="${not empty cliente}">
             <form action="AlterarClienteServlet" method="POST">
-            <label>Nome</label><br>
-            <input type="text" name="nome" required="true" value="${cliente.nome}"><br><br>
-            <label>Email</label><br>
-            <input type="text" name="email" required="true" value="${cliente.email}"><br><br>
-            <label>CPF</label><br>
-            <input type="text" name="cpf" required="true" value="${cliente.cpf}" readonly="true"><br><br>
-            <label>CEP</label><br>
-            <input type="text" name="cep" required="true" value="${cliente.cep}"><br><br>
-            <label>Telefone</label><br>
-            <input type="text" name="telefone" required="true" value="${cliente.telefone}"><br><br>
-            <label>Sexo</label><br>
-            <input type="text" name="sexo" required="true" value="${cliente.sexo}"><br><br>
+            <label class="form-label">Nome</label><br>
+            <input type="text" class="form-control" name="nome" required="true" value="${cliente.nome}"><br><br>
+            <label class="form-label">Email</label><br>
+            <input type="text" class="form-control" name="email" required="true" value="${cliente.email}"><br><br>
+            <label class="form-label">CPF</label><br>
+            <input type="text" class="form-control" name="cpf" required="true" value="${cliente.cpf}" readonly="true"><br><br>
+            <label class="form-label">CEP</label><br>
+            <input type="text" class="form-control" name="cep" required="true" value="${cliente.cep}"><br><br>
+            <label class="form-label">Telefone</label><br>
+            <input type="text" class="form-control" name="telefone" required="true" value="${cliente.telefone}"><br><br>
+            <label class="form-label">Sexo</label><br>
+            <input type="text" class="form-control" name="sexo" required="true" value="${cliente.sexo}"><br><br>
             
-            <button type="submit">Alterar</button>
+            <button type="submit"  class="btn btn-primary">Alterar</button>
         </form>
         </c:if>
         

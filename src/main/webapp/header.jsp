@@ -8,6 +8,6 @@
 
     </head>
     <body>
-        <h1>Bem vindo ao super cadastro de clientes!</h1>
+        <h1>Gerenciamento de Clientes</h1>
     </body>
 </html>

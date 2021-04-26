@@ -4,7 +4,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Lista de Cliente</title>
     </head>
     <body class="container">
         <c:import url="header.jsp" />

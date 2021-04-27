@@ -28,8 +28,8 @@
                     <td>${cliente.telefone}</td>
                     <td>${cliente.sexo}</td>
                     
-                    <td><a href="AlterarClienteServlet?cpf=${cliente.cpf}" class="btn btn-primary"> Alterar</a></td>
-                    <td><a href="ExcluirClienteServlet?cpf=${cliente.cpf}" class="fas fa-trash">    Excluir</a></td>
+                    <td><a href="AlterarClienteServlet?cpf=${cliente.cpf}" class="btn btn-primary">Alterar</a></td>
+                    <td><a href="ExcluirClienteServlet?cpf=${cliente.cpf}" class="btn btn-primary">Excluir</a></td>
                 </tr>
             </c:forEach>
         </table>

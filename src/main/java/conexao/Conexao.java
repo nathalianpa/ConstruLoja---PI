@@ -11,16 +11,16 @@ public class Conexao {
  
     static {
         try {
-            Class.forName("org.apache.derby.jdbc.EmbeddedDriver");
+            Class.forName("com.mysql.cj.jdbc.Driver");
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(Conexao.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
     
     public static Connection getConexao() throws SQLException{
-        String url = "jdbc:derby://localhost:1527/construlojaPI";
-        String user = "construloja";
-        String password = "construloja";
+        String url = "jdbc:mysql://127.0.0.1:3306/construlojapi?useSSL=false";
+        String user = "root";
+        String password = "";
         
         return DriverManager.getConnection(url, user, password);
     }

@@ -16,6 +16,6 @@ public class ExcluirProdutoServlet extends HttpServlet {
             throws ServletException, IOException {
         int codigo = Integer.parseInt(request.getParameter("codigo"));
         boolean ok = ProdutoDAO.deletar(codigo);
-        Redirect.sendRedirect(ok, response);
+        response.setStatus(ok? 200:500);
     }
 }

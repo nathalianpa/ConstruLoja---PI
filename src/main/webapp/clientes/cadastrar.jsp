@@ -25,7 +25,7 @@
             <input type="text" class="form-control" name="sexo" required="true"><br><br>
             
             <button type="submit" class="btn btn-primary">Cadastrar</button>
-        </form>
+            </form>
         </c:if>
         <c:if test="${not empty cliente}">
             <form action="AlterarClienteServlet" method="POST">

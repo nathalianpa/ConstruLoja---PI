@@ -8,6 +8,6 @@
         <script src="lib/jquery-3.6.0.min.js" type="text/javascript"></script>
     </head>
     <body>
-        <h1>Gerenciamento de Clientes</h1>
+        <h1>Gerenciamento</h1>
     </body>
 </html>

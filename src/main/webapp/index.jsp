@@ -15,5 +15,12 @@
         <br>
         <br>
         <a href="clientes/cadastrar.jsp" class="btn btn-primary">Cadastrar Cliente</a>
+        <br>
+        <br>
+        <a href="ProdutoServlet" class="btn btn-primary">Listar Produtos</a>
+        <br>
+        <br>
+        <a href="produtos/cadastrar.jsp" class="btn btn-primary">Cadastrar Produto</a>
+        <br>
     </body>
 </html>

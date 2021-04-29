@@ -103,7 +103,7 @@ public class ProdutoDAO {
     
     public static boolean atualizar(Produto produto){
         boolean ok = true;
-        String query = "update Produto set nomeProduto=?,quantidadeProduto=?,descricao=?,valor=? where idProduto=?";
+        String query = "update Produto set nomeProduto=?,quantidadeProduto=?,descricao=?,valor=? where codigo=?";
         Connection con;
         try {
             con = conexao.Conexao.getConexao();
@@ -112,6 +112,7 @@ public class ProdutoDAO {
             ps.setInt(2, produto.getQuantidadeProduto());
             ps.setString(3, produto.getDescricao());
             ps.setDouble(4, produto.getValor());
+            ps.setDouble(5, produto.getCodigo());
             ps.executeUpdate();
         } catch (SQLException ex) {
             Logger.getLogger(ClienteDAO.class.getName()).log(Level.SEVERE, null, ex);

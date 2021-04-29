@@ -9,20 +9,38 @@
     <body class="container">
         <c:import url="../header.jsp" />
         
-        <form action="CadastrarProdutoServlet" method="POST">
-            <label class="form-label">Código</label><br>
-            <input type="text" class="form-control" name="codigo" required="true"><br><br>
-            <label class="form-label">Nome</label><br>
-            <input type="text" class="form-control" name="nome" required="true"><br><br>
-            <label class="form-label">Quantidade</label><br>
-            <input type="text" class="form-control" name="quantidade" required="true"><br><br>
-            <label class="form-label">Descrição</label><br>
-            <input type="text" class="form-control" name="descricao" required="true"><br><br>
-            <label class="form-label">Valor</label><br>
-            <input type="text" class="form-control" name="valor" required="true"><br><br>
-            
-            <button type="submit" class="btn btn-primary">Cadastrar</button>
-          </form>
+        <c:if test="${empty produto}">
+            <form action="CadastrarProdutoServlet" method="POST">
+                <label class="form-label">Código</label><br>
+                <input type="text" class="form-control" name="codigo" required="true"><br><br>
+                <label class="form-label">Nome</label><br>
+                <input type="text" class="form-control" name="nome" required="true"><br><br>
+                <label class="form-label">Quantidade</label><br>
+                <input type="text" class="form-control" name="quantidade" required="true"><br><br>
+                <label class="form-label">Descrição</label><br>
+                <input type="text" class="form-control" name="descricao" required="true"><br><br>
+                <label class="form-label">Valor</label><br>
+                <input type="text" class="form-control" name="valor" required="true"><br><br>
+
+                <button type="submit" class="btn btn-primary">Cadastrar</button>
+            </form>
+        </c:if>
+        <c:if test="${not empty produto}">
+            <form action="AlterarProdutoServlet" method="POST">
+                <label class="form-label">Código</label><br>
+                <input type="text" class="form-control" name="codigo" required="true" value="${produto.codigo}" readonly="true"><br><br>
+                <label class="form-label">Nome</label><br>
+                <input type="text" class="form-control" name="nome" required="true" value="${produto.nomeProduto}"><br><br>
+                <label class="form-label">Quantidade</label><br>
+                <input type="text" class="form-control" name="quantidade" required="true" value="${produto.quantidadeProduto}"><br><br>
+                <label class="form-label">Descrição</label><br>
+                <input type="text" class="form-control" name="descricao" required="true" value="${produto.descricao}"><br><br>
+                <label class="form-label">Valor</label><br>
+                <input type="text" class="form-control" name="valor" required="true" value="${produto.valor}"><br><br>
+
+                <button type="submit" class="btn btn-primary">Alterar</button>
+            </form>
+        </c:if>
         
         <c:import url="../footer.jsp" />
     </body>

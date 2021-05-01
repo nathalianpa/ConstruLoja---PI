@@ -26,7 +26,6 @@ public class AlterarClienteServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        Integer id = Integer.parseInt(request.getParameter("id"));
         String nome = request.getParameter("nome");
         String email = request.getParameter("email");
         String cpf = request.getParameter("cpf");
@@ -34,6 +33,7 @@ public class AlterarClienteServlet extends HttpServlet {
         String telefone = request.getParameter("telefone");
         String sexo = request.getParameter("sexo");
         String dataForm = request.getParameter("data");
+        Integer id = Integer.parseInt(request.getParameter("id"));
         
         Date date = Date.valueOf(dataForm);
         

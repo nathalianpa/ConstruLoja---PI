@@ -10,7 +10,7 @@
         <script type="text/javascript">
             function mostrarTelaConfirmacao(nome, id){
                 $("#nomeCliente").html(nome);
-                $("#idCliente").val(id)
+                $("#idCliente").val(id);
                 
                 var modalConfirmacao = $("#modalConfirmacao");
                 modalConfirmacao.show();
@@ -67,7 +67,7 @@
                     <td>${cliente.sexo}</td>
                     <td><fmt:formatDate pattern="dd/MM/yyyy" value="${cliente.dataNascimento}"/></td>
                     
-                    <td><a href="AlterarClienteServlet?cpf=${cliente.id}" class="btn btn-primary">Alterar</a></td>
+                    <td><a href="AlterarClienteServlet?id=${cliente.id}" class="btn btn-primary">Alterar</a></td>
                     
                     <td><button type="button" class="btn btn-link" onclick="mostrarTelaConfirmacao('${cliente.nome}', '${cliente.id}')">Excluir</button></td>
                 </tr>

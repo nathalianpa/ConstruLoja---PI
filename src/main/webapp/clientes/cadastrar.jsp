@@ -31,12 +31,13 @@
         </c:if>
         <c:if test="${not empty cliente}">
             <form action="AlterarClienteServlet" method="POST">
+            <input type="text" class="form-control" name="id" hidden="true" value="${cliente.id}"><br><br>
             <label class="form-label">Nome</label><br>
             <input type="text" class="form-control" name="nome" required="true" value="${cliente.nome}"><br><br>
             <label class="form-label">Email</label><br>
             <input type="text" class="form-control" name="email" required="true" value="${cliente.email}"><br><br>
             <label class="form-label">CPF</label><br>
-            <input type="text" class="form-control" name="cpf" required="true" value="${cliente.cpf}" readonly="true"><br><br>
+            <input type="text" class="form-control" name="cpf" required="true" value="${cliente.cpf}"><br><br>
             <label class="form-label">CEP</label><br>
             <input type="text" class="form-control" name="cep" required="true" value="${cliente.cep}"><br><br>
             <label class="form-label">Telefone</label><br>

@@ -1,6 +1,7 @@
 
 package entidade;
 
+import java.sql.Date;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -8,14 +9,17 @@ import lombok.Setter;
 @Setter
 public class Cliente {
     
+    private Integer id;
     private String nome;
     private String email;
     private String cpf;
     private String cep;
     private String telefone;
     private String sexo;
+    private Date dataNascimento;
 
-    public Cliente(String nome, String email, String cpf, String cep, String telefone, String sexo) {
+    public Cliente(Integer id, String nome, String email, String cpf, String cep, String telefone, String sexo) {
+        this.id = id;
         this.nome = nome;
         this.email = email;
         this.cpf = cpf;

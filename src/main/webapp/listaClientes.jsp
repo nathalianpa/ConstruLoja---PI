@@ -1,3 +1,4 @@
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -7,9 +8,9 @@
         <title>Lista de Cliente</title>
         
         <script type="text/javascript">
-            function mostrarTelaConfirmacao(nome, cpf){
+            function mostrarTelaConfirmacao(nome, id){
                 $("#nomeCliente").html(nome);
-                $("#cpfCliente").val(cpf)
+                $("#idCliente").val(id)
                 
                 var modalConfirmacao = $("#modalConfirmacao");
                 modalConfirmacao.show();
@@ -20,9 +21,9 @@
             }
             
             function deletarCliente(){
-                var cpf = $("#cpfCliente").val();
+                var id = $("#idCliente").val();
                 fecharTelaConfirmacao();
-                $.ajax( "ExcluirClienteServlet?cpf=" + cpf).done(function() {
+                $.ajax( "ExcluirClienteServlet?id=" + id).done(function() {
                     location.reload();
                 })
                 .fail(function() {
@@ -46,25 +47,29 @@
         </div>
         
         <table class="table table-hover">
+            <th>Id</th>
             <th>Nome</th>
             <th>Email</th>
             <th>CPF</th>
             <th>CEP</th>
             <th>Telefone</th>
             <th>Sexo</th>
+            <th>Data de Nascimento</th>
             
             <c:forEach items="${listaClientes}" var="cliente">
                 <tr>
+                    <td>${cliente.id}</td>
                     <td>${cliente.nome}</td>
                     <td>${cliente.email}</td>
                     <td>${cliente.cpf}</td>
                     <td>${cliente.cep}</td>
                     <td>${cliente.telefone}</td>
                     <td>${cliente.sexo}</td>
+                    <td><fmt:formatDate pattern="dd/MM/yyyy" value="${cliente.dataNascimento}"/></td>
                     
-                    <td><a href="AlterarClienteServlet?cpf=${cliente.cpf}" class="btn btn-primary">Alterar</a></td>
+                    <td><a href="AlterarClienteServlet?cpf=${cliente.id}" class="btn btn-primary">Alterar</a></td>
                     
-                    <td><button type="button" class="btn btn-link" onclick="mostrarTelaConfirmacao('${cliente.nome}', '${cliente.cpf}')">Excluir</button></td>
+                    <td><button type="button" class="btn btn-link" onclick="mostrarTelaConfirmacao('${cliente.nome}', '${cliente.id}')">Excluir</button></td>
                 </tr>
             </c:forEach>
         </table>
@@ -80,7 +85,7 @@
               </div>
               <div class="modal-body">
                   <p>Cliente: <label id="nomeCliente"></label> <br>Confirmar exclusão do cliente?</p>
-                  <input type="hidden" id="cpfCliente" />
+                  <input type="hidden" id="idCliente" />
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" onclick="fecharTelaConfirmacao()">Cancelar</button>

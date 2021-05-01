@@ -13,8 +13,8 @@ public class ExcluirClienteServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String cpf = request.getParameter("cpf");
-        boolean ok = ClienteDAO.deletar(cpf);
+        Integer id = Integer.parseInt(request.getParameter("id"));
+        boolean ok = ClienteDAO.deletar(id);
         response.setStatus(ok? 200:500);
     }
 }

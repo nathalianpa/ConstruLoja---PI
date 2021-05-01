@@ -11,20 +11,22 @@
         
         <c:if test="${empty cliente}">
             <form action="CadastrarClienteServlet" method="POST">
-            <label class="form-label">Nome</label><br>
-            <input type="text" class="form-control" name="nome" required="true"><br><br>
-            <label class="form-label">Email</label><br>
-            <input type="text" class="form-control" name="email" required="true"><br><br>
-            <label class="form-label">CPF</label><br>
-            <input type="text" class="form-control" name="cpf" required="true"><br><br>
-            <label class="form-label">CEP</label><br>
-            <input type="text" class="form-control" name="cep" required="true"><br><br>
-            <label class="form-label">Telefone</label><br>
-            <input type="text" class="form-control" name="telefone" required="true"><br><br>
-            <label class="form-label">Sexo</label><br>
-            <input type="text" class="form-control" name="sexo" required="true"><br><br>
-            
-            <button type="submit" class="btn btn-primary">Cadastrar</button>
+                <label class="form-label">Nome</label><br>
+                <input type="text" class="form-control" name="nome" required="true"><br><br>
+                <label class="form-label">Email</label><br>
+                <input type="text" class="form-control" name="email" required="true"><br><br>
+                <label class="form-label">CPF</label><br>
+                <input type="text" class="form-control" name="cpf" required="true"><br><br>
+                <label class="form-label">CEP</label><br>
+                <input type="text" class="form-control" name="cep" required="true"><br><br>
+                <label class="form-label">Telefone</label><br>
+                <input type="text" class="form-control" name="telefone" required="true"><br><br>
+                <label class="form-label">Sexo</label><br>
+                <input type="text" class="form-control" name="sexo" required="true"><br><br>
+                <label class="form-label">Data de Nascimento</label><br>
+                <input type="date" name="data" required="true"/><br><br>
+                
+                <button type="submit" class="btn btn-primary">Cadastrar</button>
             </form>
         </c:if>
         <c:if test="${not empty cliente}">
@@ -41,6 +43,8 @@
             <input type="text" class="form-control" name="telefone" required="true" value="${cliente.telefone}"><br><br>
             <label class="form-label">Sexo</label><br>
             <input type="text" class="form-control" name="sexo" required="true" value="${cliente.sexo}"><br><br>
+            <label class="form-label">Data de Nascimento</label><br>
+            <input type="date" name="data" required="true"/><br><br>
             
             <button type="submit"  class="btn btn-primary">Alterar</button>
         </form>

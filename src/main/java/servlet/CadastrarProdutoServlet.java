@@ -9,6 +9,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import utils.RedirectProduto;
 
 public class CadastrarProdutoServlet extends HttpServlet {
 
@@ -29,11 +30,6 @@ public class CadastrarProdutoServlet extends HttpServlet {
         Produto produto = new Produto(-1, codigo, nome, quantidade, descricao, valor, filial);
         produto.setDataProduto(data);
         boolean ok = ProdutoDAO.cadastrar(produto);
-        
-        if (ok) {
-            response.sendRedirect(request.getContextPath() + "/sucesso.jsp");
-        }else{
-            response.sendRedirect(request.getContextPath() + "/erro.jsp");
-        }
+        RedirectProduto.sendRedirect(ok, response);
     }
 }

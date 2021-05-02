@@ -31,7 +31,8 @@ public class ProdutoDAO {
                 String descricao = rs.getString("descricao");
                 double valor = rs.getDouble("valor");
                 Date dataProduto = rs.getDate("dataProduto");
-                Produto produto = new Produto(id, codigo, nomeProduto, quantidadeProduto, descricao, valor);
+                String filial = rs.getString("filial");
+                Produto produto = new Produto(id, codigo, nomeProduto, quantidadeProduto, descricao, valor, filial);
                 produto.setDataProduto(dataProduto);
                 produtos.add(produto);
             }
@@ -45,7 +46,7 @@ public class ProdutoDAO {
     public static boolean cadastrar(Produto produto){
         boolean ok = true;
         
-        String query = "insert into Produto (codigo, nomeProduto, quantidadeProduto, descricao, valor, dataProduto) values (?,?,?,?,?,?)";
+        String query = "insert into Produto (codigo, nomeProduto, quantidadeProduto, descricao, valor, dataProduto, filial) values (?,?,?,?,?,?,?)";
         Connection con;
         try {
             con = Conexao.getConexao();
@@ -56,6 +57,7 @@ public class ProdutoDAO {
             ps.setString(4, produto.getDescricao());
             ps.setDouble(5, produto.getValor());
             ps.setDate(6, produto.getDataProduto());
+            ps.setString(7, produto.getFilial());
             ps.executeUpdate();
         } catch (SQLException ex) {
             Logger.getLogger(ClienteDAO.class.getName()).log(Level.SEVERE, null, ex);
@@ -97,7 +99,8 @@ public class ProdutoDAO {
                 int quantidadeProduto = rs.getInt("quantidadeProduto");
                 String descricao = rs.getString("descricao");
                 double valor = rs.getDouble("valor");
-                produto = new Produto(idProduto, codigo, nomeProduto, quantidadeProduto, descricao, valor);
+                String filial = rs.getString("filial");
+                produto = new Produto(idProduto, codigo, nomeProduto, quantidadeProduto, descricao, valor, filial);
             }
         } catch (SQLException ex) {
             Logger.getLogger(ClienteDAO.class.getName()).log(Level.SEVERE, null, ex);
@@ -108,7 +111,7 @@ public class ProdutoDAO {
     
     public static boolean atualizar(Produto produto){
         boolean ok = true;
-        String query = "update Produto set codigo=?,nomeProduto=?,quantidadeProduto=?,descricao=?,valor=?,dataProduto=? where idProduto=?";
+        String query = "update Produto set codigo=?,nomeProduto=?,quantidadeProduto=?,descricao=?,valor=?,dataProduto=?,filial=? where idProduto=?";
         Connection con;
         try {
             con = conexao.Conexao.getConexao();
@@ -119,7 +122,8 @@ public class ProdutoDAO {
             ps.setString(4, produto.getDescricao());
             ps.setDouble(5, produto.getValor());
             ps.setDate(6, produto.getDataProduto());
-            ps.setInt(7, produto.getIdProduto());
+            ps.setString(7, produto.getFilial());
+            ps.setInt(8, produto.getIdProduto());
             ps.executeUpdate();
         } catch (SQLException ex) {
             Logger.getLogger(ClienteDAO.class.getName()).log(Level.SEVERE, null, ex);

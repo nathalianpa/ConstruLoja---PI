@@ -54,6 +54,7 @@
             <th>Descrição</th>
             <th>Valor</th>
             <th>Data de Cadastro</th>
+            <th>Filial</th>
             
             <c:forEach items="${listaProdutos}" var="produto">
                 <tr>
@@ -64,6 +65,7 @@
                     <td>${produto.descricao}</td>
                     <td>${produto.valor}</td>
                     <td>${produto.dataProduto}</td>
+                    <td>${produto.filial}</td>
                     
                     <td><a href="AlterarProdutoServlet?idProduto=${produto.idProduto}" class="btn btn-primary">Alterar</a></td>
                     

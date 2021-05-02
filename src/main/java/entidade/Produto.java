@@ -16,14 +16,16 @@ public class Produto {
     private String descricao;
     private double valor;
     private Date dataProduto;
+    private String filial;
 
-    public Produto(int idProduto, int codigo, String nomeProduto, int quantidadeProduto, String descricao, double valor) {
+    public Produto(int idProduto, int codigo, String nomeProduto, int quantidadeProduto, String descricao, double valor, String filial) {
         this.idProduto = idProduto;
         this.codigo = codigo;
         this.nomeProduto = nomeProduto;
         this.quantidadeProduto = quantidadeProduto;
         this.descricao = descricao;
         this.valor = valor;
+        this.filial = filial;
     }
 
     @Override

@@ -23,8 +23,10 @@ public class CadastrarProdutoServlet extends HttpServlet {
         
         String dataForm = request.getParameter("data");
         Date data = Date.valueOf(dataForm);
-        
-        Produto produto = new Produto(-1, codigo, nome, quantidade, descricao, valor);
+
+        String filial = request.getParameter("filial");
+
+        Produto produto = new Produto(-1, codigo, nome, quantidade, descricao, valor, filial);
         produto.setDataProduto(data);
         boolean ok = ProdutoDAO.cadastrar(produto);
         

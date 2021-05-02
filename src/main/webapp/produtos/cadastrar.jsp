@@ -23,6 +23,8 @@
                 <input type="text" class="form-control" name="valor" required="true"><br><br>
                 <label class="form-label">Data de Cadastro</label><br>
                 <input type="date" name="data" required="true"><br><br>
+                <label class="form-label">Filial</label><br>
+                <input type="text" name="filial" required="true"><br><br>
                 
                 <button type="submit" class="btn btn-primary">Cadastrar</button>
             </form>
@@ -42,6 +44,8 @@
                 <input type="text" class="form-control" name="valor" required="true" value="${produto.valor}"><br><br>
                 <label class="form-label">Data de Cadastro</label><br>
                 <input type="date" name="dataProduto" required="true" value="${produto.dataProduto}"><br><br>
+                <label class="form-label">Filial</label><br>
+                <input type="text" name="filial" required="true" value="${produto.filial}"><br><br>
                 
                 <button type="submit" class="btn btn-primary">Alterar</button>
             </form>

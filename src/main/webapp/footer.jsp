@@ -7,6 +7,6 @@
     </head>
     <body>
         <br>
-        <a href="<c:url value="/index.jsp"/>"class="btn btn-primary">Voltar</a>
+        <a href="<c:url value="/index.jsp"/>" class="btn btn-primary">Voltar</a>
     </body>
 </html>

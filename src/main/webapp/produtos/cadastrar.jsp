@@ -12,19 +12,28 @@
         <c:if test="${empty produto}">
             <form action="CadastrarProdutoServlet" method="POST">
                 <label class="form-label">Código</label><br>
-                <input type="text" class="form-control" name="codigo" required="true"><br><br>
+                <input type="text" class="form-control" name="codigo" required="true"><br>
                 <label class="form-label">Nome</label><br>
-                <input type="text" class="form-control" name="nome" required="true"><br><br>
+                <input type="text" class="form-control" name="nome" required="true"><br>
                 <label class="form-label">Quantidade</label><br>
-                <input type="text" class="form-control" name="quantidade" required="true"><br><br>
+                <input type="text" class="form-control" name="quantidade" required="true"><br>
                 <label class="form-label">Descrição</label><br>
-                <input type="text" class="form-control" name="descricao" required="true"><br><br>
+                <input type="text" class="form-control" name="descricao" required="true"><br>
                 <label class="form-label">Valor</label><br>
-                <input type="text" class="form-control" name="valor" required="true"><br><br>
+                <input type="text" class="form-control" name="valor" required="true"><br>
                 <label class="form-label">Data de Cadastro</label><br>
                 <input type="date" name="data" required="true"><br><br>
                 <label class="form-label">Filial</label><br>
-                <input type="text" name="filial" required="true"><br><br>
+                <div>
+                    <select name="filial" id="filial">
+                        <option value="-">Selecione</option>
+                        <option value="SP">SP</option>
+                        <option value="RJ">RJ</option>
+                        <option value="PR">PR</option>
+                        <option value="RS">RS</option>
+                    </select>
+                </div>
+                <br>
                 
                 <button type="submit" class="btn btn-primary">Cadastrar</button>
             </form>
@@ -45,12 +54,21 @@
                 <label class="form-label">Data de Cadastro</label><br>
                 <input type="date" name="dataProduto" required="true" value="${produto.dataProduto}"><br><br>
                 <label class="form-label">Filial</label><br>
-                <input type="text" name="filial" required="true" value="${produto.filial}"><br><br>
+                <div>
+                    <select name="filial" id="filial">
+                        <option value="-">Selecione</option>
+                        <option value="SP">SP</option>
+                        <option value="RJ">RJ</option>
+                        <option value="PR">PR</option>
+                        <option value="RS">RS</option>
+                    </select>
+                </div>
+                <br>
                 
                 <button type="submit" class="btn btn-primary">Alterar</button>
             </form>
         </c:if>
-        
+
         <c:import url="../footer.jsp" />
     </body>
 </html>

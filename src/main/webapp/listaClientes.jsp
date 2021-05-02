@@ -31,7 +31,7 @@
                     $("#alerta").css("display", "block");
                     setTimeout(function(){
                         $("#alerta").css("display", "none");
-                    }, 3000)
+                    }, 2000)
                 })
             }
         </script>

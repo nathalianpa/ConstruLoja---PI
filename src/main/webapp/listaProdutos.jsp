@@ -8,9 +8,9 @@
         <title>Lista de Produto</title>
 
         <script type="text/javascript">
-            function mostrarTelaConfirmacao(nome, codigo){
+            function mostrarTelaConfirmacao(nome, id){
                 $("#nomeProduto").html(nome);
-                $("#codigoProduto").val(codigo);
+                $("#idProduto").val(id);
                 
                 var modalConfirmacao = $("#modalConfirmacao");
                 modalConfirmacao.show();
@@ -21,9 +21,9 @@
             }
             
             function deletarProduto(){
-                var codigo = $("#codigoProduto").val();
+                var id = $("#idProduto").val();
                 fecharTelaConfirmacao();
-                $.ajax( "ExcluirProdutoServlet?codigo=" + codigo).done(function() {
+                $.ajax( "ExcluirProdutoServlet?idProduto=" + id).done(function() {
                     location.reload();
                 })
                 .fail(function() {
@@ -47,23 +47,27 @@
         </div>
         
         <table class="table table-hover">
+            <th>Id</th>
             <th>Código</th>
             <th>Nome</th>
             <th>Quantidade</th>
             <th>Descrição</th>
             <th>Valor</th>
+            <th>Data de Cadastro</th>
             
             <c:forEach items="${listaProdutos}" var="produto">
                 <tr>
+                    <td>${produto.idProduto}</td>
                     <td>${produto.codigo}</td>
                     <td>${produto.nomeProduto}</td>
                     <td>${produto.quantidadeProduto}</td>
                     <td>${produto.descricao}</td>
                     <td>${produto.valor}</td>
+                    <td>${produto.dataProduto}</td>
                     
-                    <td><a href="AlterarProdutoServlet?codigo=${produto.codigo}" class="btn btn-primary">Alterar</a></td>
+                    <td><a href="AlterarProdutoServlet?idProduto=${produto.idProduto}" class="btn btn-primary">Alterar</a></td>
                     
-                    <td><button type="button" class="btn btn-link" onclick="mostrarTelaConfirmacao('${produto.nomeProduto}', '${produto.codigo}')">Excluir</button></td>
+                    <td><button type="button" class="btn btn-link" onclick="mostrarTelaConfirmacao('${produto.nomeProduto}', '${produto.idProduto}')">Excluir</button></td>
                 </tr>
             </c:forEach>
         </table>
@@ -78,7 +82,7 @@
               </div>
               <div class="modal-body">
                   <p>Produto: <label id="nomeProduto"></label> <br>Confirmar exclusão do produto?</p>
-                  <input type="hidden" id="codigoProduto" />
+                  <input type="hidden" id="idProduto" />
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" onclick="fecharTelaConfirmacao()">Cancelar</button>

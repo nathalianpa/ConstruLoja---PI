@@ -21,14 +21,17 @@
                 <input type="text" class="form-control" name="descricao" required="true"><br><br>
                 <label class="form-label">Valor</label><br>
                 <input type="text" class="form-control" name="valor" required="true"><br><br>
-
+                <label class="form-label">Data de Cadastro</label><br>
+                <input type="date" name="data" required="true"><br><br>
+                
                 <button type="submit" class="btn btn-primary">Cadastrar</button>
             </form>
         </c:if>
         <c:if test="${not empty produto}">
             <form action="AlterarProdutoServlet" method="POST">
+                <input type="text" name="idProduto" hidden="true" value="${produto.idProduto}"><br><br>
                 <label class="form-label">Código</label><br>
-                <input type="text" class="form-control" name="codigo" required="true" value="${produto.codigo}" readonly="true"><br><br>
+                <input type="text" class="form-control" name="codigo" required="true" value="${produto.codigo}"><br><br>
                 <label class="form-label">Nome</label><br>
                 <input type="text" class="form-control" name="nome" required="true" value="${produto.nomeProduto}"><br><br>
                 <label class="form-label">Quantidade</label><br>
@@ -37,7 +40,9 @@
                 <input type="text" class="form-control" name="descricao" required="true" value="${produto.descricao}"><br><br>
                 <label class="form-label">Valor</label><br>
                 <input type="text" class="form-control" name="valor" required="true" value="${produto.valor}"><br><br>
-
+                <label class="form-label">Data de Cadastro</label><br>
+                <input type="date" name="dataProduto" required="true" value="${produto.dataProduto}"><br><br>
+                
                 <button type="submit" class="btn btn-primary">Alterar</button>
             </form>
         </c:if>

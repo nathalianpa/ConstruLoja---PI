@@ -9,7 +9,7 @@
     <body class="container">
         <c:import url="header.jsp" />
         
-        <h1>Menu</h1>
+        <h1 id="titulo">Menu</h1>
         
         <a href="ClienteServlet" class="btn btn-primary">Listar Clientes</a>
         <br>

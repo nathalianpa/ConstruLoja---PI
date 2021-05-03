@@ -29,7 +29,6 @@
                         <option value="-">Selecione</option>
                         <option value="SP">SP</option>
                         <option value="RJ">RJ</option>
-                        <option value="PR">PR</option>
                         <option value="RS">RS</option>
                     </select>
                 </div>

@@ -132,4 +132,32 @@ public class ProdutoDAO {
         
         return ok;
     }
+
+    public static List<Produto> getFilial(String filial){
+        List<Produto> produtos = new ArrayList<>();
+        String query = "select * from Produto where filial=?";
+        Connection con;
+        try {
+            con = conexao.Conexao.getConexao();
+            PreparedStatement ps = con.prepareStatement(query);
+            ps.setString(1, filial);
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                int idProduto = rs.getInt("idProduto");
+                int codigo = rs.getInt("codigo");
+                String nomeProduto = rs.getString("nomeProduto");
+                int quantidadeProduto = rs.getInt("quantidadeProduto");
+                String descricao = rs.getString("descricao");
+                double valor = rs.getDouble("valor");
+                Date dataProduto = rs.getDate("dataProduto");
+                Produto produto = new Produto(idProduto, codigo, nomeProduto, quantidadeProduto, descricao, valor, filial);
+                produto.setDataProduto(dataProduto);
+                produtos.add(produto);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(ClienteDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        return produtos;
+    }
 }

@@ -22,5 +22,7 @@
         <br>
         <a href="produtos/cadastrar.jsp" class="btn btn-primary">Cadastrar Produto</a>
         <br>
+        <br>
+        <a href="venda/cadastrar.jsp" class="btn btn-primary">Tela de Venda</a>
     </body>
 </html>

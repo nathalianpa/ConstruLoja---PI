@@ -36,6 +36,10 @@
         <servlet-name>CarregarProdutosServlet</servlet-name>
         <servlet-class>servlet.CarregarProdutosServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>CarregarClientesServlet</servlet-name>
+        <servlet-class>servlet.CarregarClientesServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ClienteServlet</servlet-name>
         <url-pattern>/ClienteServlet</url-pattern>
@@ -71,6 +75,10 @@
     <servlet-mapping>
         <servlet-name>CarregarProdutosServlet</servlet-name>
         <url-pattern>/venda/CarregarProdutosServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CarregarClientesServlet</servlet-name>
+        <url-pattern>/venda/CarregarClientesServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

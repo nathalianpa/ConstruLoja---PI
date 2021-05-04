@@ -8,9 +8,9 @@ public class Redirect {
     
     public static void sendRedirect(boolean ok, HttpServletResponse response) throws IOException{
         if(ok){
-            response.sendRedirect("../sucesso.jsp");
+            response.sendRedirect("sucesso.jsp");
         }else{
-            response.sendRedirect("../erro.jsp");
+            response.sendRedirect("erro.jsp");
         }
     }
 }

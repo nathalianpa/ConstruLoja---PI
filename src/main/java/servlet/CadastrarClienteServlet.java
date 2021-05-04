@@ -9,7 +9,6 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import utils.Redirect;
 
 public class CadastrarClienteServlet extends HttpServlet {
 
@@ -28,6 +27,11 @@ public class CadastrarClienteServlet extends HttpServlet {
         
         Cliente cliente = new Cliente(-1, nome, email, cpf, cep, telefone, sexo);
         boolean ok = ClienteDAO.cadastrar(cliente, date);
-        Redirect.sendRedirect(ok, response);
+        
+        if(ok){
+            response.sendRedirect("../sucesso.jsp");
+        }else{
+            response.sendRedirect("../erro.jsp");
+        }
     }
 }

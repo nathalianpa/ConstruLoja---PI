@@ -132,4 +132,33 @@ public class ClienteDAO {
         
         return ok;
     }
+    
+    public static List<Cliente> getClienteVenda(Integer id){
+        List<Cliente> clientes = new ArrayList<>();
+        String query = "select * from cliente where id=?";
+        Connection con;
+        try {
+            con = conexao.Conexao.getConexao();
+            PreparedStatement ps = con.prepareStatement(query);
+            ps.setInt(1, id);
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                String nome = rs.getString("nome");
+                String email = rs.getString("email");
+                String cpf = rs.getString("cpf");
+                String cep = rs.getString("cep");
+                String telefone = rs.getString("telefone");
+                String sexo = rs.getString("sexo");
+                Date dataNascimento = rs.getDate("dataNascimento");
+                Cliente cliente = new Cliente(id, nome, email, cpf, cep, telefone, sexo);
+                cliente.setDataNascimento(dataNascimento);
+                clientes.add(cliente);
+            }
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(ClienteDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        return clientes;
+    }
 }

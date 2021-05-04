@@ -14,30 +14,117 @@
                 </div>
             </div>
             
-            <div class="row mt-5">
+            <div class="row mt-3">
                 <div class="col">
-                    <input type="text" name="cliente" placeholder="Digite o nome do cliente">
+                    <form action="CarregarClientesServlet" method="POST">
+                        <input type="text" name="id" id="id" placeholder="Digite o id do cliente">
+                        <br>
+                        <select name="filial" id="filial" class="mt-2">
+                            <option value="-">Selecione</option>
+                            <option value="SP">SP</option>
+                            <option value="RJ">RJ</option>
+                            <option value="RS">RS</option>
+                        </select>
+                        <br>
+                        <input type="submit" value="Carregar Dados" class="mt-2 btn btn-primary">
+                    </form>
+                </div>
+            </div>
+
+            <div class="row mt-3">
+                <div class="col">
+                    <table class="table table-hover">
+                        <th>Id</th>
+                        <th>Nome</th>
+                        <th>Email</th>
+                        <th>CPF</th>
+                        <th>CEP</th>
+                        <th>Telefone</th>
+                        <th>Sexo</th>
+                        <th>Data de Nascimento</th>
+
+                        <c:forEach items="${cliente}" var="cliente">
+                            <tr>
+                                <td>${cliente.id}</td>
+                                <td>${cliente.nome}</td>
+                                <td>${cliente.email}</td>
+                                <td>${cliente.cpf}</td>
+                                <td>${cliente.cep}</td>
+                                <td>${cliente.telefone}</td>
+                                <td>${cliente.sexo}</td>
+                                <td><fmt:formatDate pattern="dd/MM/yyyy" value="${cliente.dataNascimento}"/></td>
+                            </tr>
+                        </c:forEach>
+                    </table>
+                </div>
+            </div>
+                
+            <div class="row mt-3">
+                <div class="col">
+                    <table class="table table-hover">
+                        <th>Id</th>
+                        <th>Código</th>
+                        <th>Nome</th>
+                        <th>Quantidade</th>
+                        <th>Descrição</th>
+                        <th>Valor</th>
+                        <th>Data de Cadastro</th>
+                        <th>Filial</th>
+            
+                        <c:forEach items="${listaProdutos}" var="produto">
+                            <tr>
+                                <td>${produto.idProduto}</td>
+                                <td>${produto.codigo}</td>
+                                <td>${produto.nomeProduto}</td>
+                                <td>${produto.quantidadeProduto}</td>
+                                <td>${produto.descricao}</td>
+                                <td>${produto.valor}</td>
+                                <td>${produto.dataProduto}</td>
+                                <td>${produto.filial}</td>
+                            </tr>
+                        </c:forEach>
+                    </table>
                 </div>
             </div>
             
-            <div class="row mt-5">
+            <div class="row mt-3">
                 <div class="col">
-                    <form action="CarregarProdutosServlet" method="POST">
-                        <div>
-                            <select name="filial" id="filial">
-                                <option value="-">Selecione</option>
-                                <option value="SP">SP</option>
-                                <option value="RJ">RJ</option>
-                                <option value="RS">RS</option>
-                            </select>
+                    <form action="CadastrarProdutoServlet" method="POST">
+                        <div class="row">
+                            <div class="col-6">
+                                <label class="form-label">Nome do Cliente</label><br>
+                                <input type="text" class="form-control" name="cliente" required="true"><br>
+                            </div>
+                            <div class="col-6">
+                                <label class="form-label">Nome do Produto</label><br>
+                                <input type="text" class="form-control" name="nomeProduto" required="true"><br>
+                            </div>
                         </div>
-                        <br>
-                        <div>
-                            <input type="submit" value="Listar Produtos da Filial">
+                        
+                        <div class="row">
+                            <div class="col-4">
+                                 <label class="form-label">Quantidade</label><br>
+                                <input type="text" class="form-control" name="quantidade" required="true"><br>
+                            </div>
+                            <div class="col-4">
+                                <label class="form-label">Valor Total</label><br>
+                                <input type="text" class="form-control" name="valorTotal" required="true"><br>
+                            </div>
+                            <div class="col-4">
+                                <label class="form-label">Filial</label><br>
+                                <select name="filial" class="form-control" id="filial">
+                                    <option value="-">Selecione</option>
+                                    <option value="SP">SP</option>
+                                    <option value="RJ">RJ</option>
+                                    <option value="RS">RS</option>
+                                </select>
+                            </div>
                         </div>
                     </form>
                 </div>
             </div>
+                
+            <h1>Cliente: ${param.id}</h1>
 
             <div class="row mt-5">
                 <div class="col">

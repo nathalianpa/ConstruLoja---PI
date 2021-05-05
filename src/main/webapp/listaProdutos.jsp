@@ -51,7 +51,7 @@
             <th>Código</th>
             <th>Nome</th>
             <th>Quantidade</th>
-            <th>Descrição</th>
+            <th>Categoria</th>
             <th>Valor</th>
             <th>Data de Cadastro</th>
             <th>Filial</th>
@@ -62,9 +62,9 @@
                     <td>${produto.codigo}</td>
                     <td>${produto.nomeProduto}</td>
                     <td>${produto.quantidadeProduto}</td>
-                    <td>${produto.descricao}</td>
+                    <td>${produto.categoria}</td>
                     <td>${produto.valor}</td>
-                    <td>${produto.dataProduto}</td>
+                    <td>${produto.dataCadastro}</td>
                     <td>${produto.filial}</td>
                     
                     <td><a href="AlterarProdutoServlet?idProduto=${produto.idProduto}" class="btn btn-primary">Alterar</a></td>

@@ -28,12 +28,12 @@ public class ProdutoDAO {
                 int codigo = rs.getInt("codigo");
                 String nomeProduto = rs.getString("nomeProduto");
                 int quantidadeProduto = rs.getInt("quantidadeProduto");
-                String descricao = rs.getString("descricao");
+                String categoria = rs.getString("categoria");
                 double valor = rs.getDouble("valor");
-                Date dataProduto = rs.getDate("dataProduto");
+                Date dataCadastro = rs.getDate("dataCadastro");
                 String filial = rs.getString("filial");
-                Produto produto = new Produto(id, codigo, nomeProduto, quantidadeProduto, descricao, valor, filial);
-                produto.setDataProduto(dataProduto);
+                Produto produto = new Produto(id, codigo, nomeProduto, quantidadeProduto, categoria, valor, filial);
+                produto.setDataCadastro(dataCadastro);
                 produtos.add(produto);
             }
         } catch (SQLException ex) {
@@ -46,7 +46,7 @@ public class ProdutoDAO {
     public static boolean cadastrar(Produto produto){
         boolean ok = true;
         
-        String query = "insert into Produto (codigo, nomeProduto, quantidadeProduto, descricao, valor, dataProduto, filial) values (?,?,?,?,?,?,?)";
+        String query = "insert into Produto (codigo, nomeProduto, quantidadeProduto, categoria, valor, dataCadastro, filial) values (?,?,?,?,?,?,?)";
         Connection con;
         try {
             con = Conexao.getConexao();
@@ -54,9 +54,9 @@ public class ProdutoDAO {
             ps.setInt(1, produto.getCodigo());
             ps.setString(2, produto.getNomeProduto());
             ps.setInt(3, produto.getQuantidadeProduto());
-            ps.setString(4, produto.getDescricao());
+            ps.setString(4, produto.getCategoria());
             ps.setDouble(5, produto.getValor());
-            ps.setDate(6, produto.getDataProduto());
+            ps.setDate(6, produto.getDataCadastro());
             ps.setString(7, produto.getFilial());
             ps.executeUpdate();
         } catch (SQLException ex) {
@@ -97,10 +97,10 @@ public class ProdutoDAO {
                 int codigo = rs.getInt("codigo");
                 String nomeProduto = rs.getString("nomeProduto");
                 int quantidadeProduto = rs.getInt("quantidadeProduto");
-                String descricao = rs.getString("descricao");
+                String categoria = rs.getString("categoria");
                 double valor = rs.getDouble("valor");
                 String filial = rs.getString("filial");
-                produto = new Produto(idProduto, codigo, nomeProduto, quantidadeProduto, descricao, valor, filial);
+                produto = new Produto(idProduto, codigo, nomeProduto, quantidadeProduto, categoria, valor, filial);
             }
         } catch (SQLException ex) {
             Logger.getLogger(ClienteDAO.class.getName()).log(Level.SEVERE, null, ex);
@@ -111,7 +111,7 @@ public class ProdutoDAO {
     
     public static boolean atualizar(Produto produto){
         boolean ok = true;
-        String query = "update Produto set codigo=?,nomeProduto=?,quantidadeProduto=?,descricao=?,valor=?,dataProduto=?,filial=? where idProduto=?";
+        String query = "update Produto set codigo=?,nomeProduto=?,quantidadeProduto=?,categoria=?,valor=?,dataCadastro=?,filial=? where idProduto=?";
         Connection con;
         try {
             con = conexao.Conexao.getConexao();
@@ -119,9 +119,9 @@ public class ProdutoDAO {
             ps.setInt(1, produto.getCodigo());
             ps.setString(2, produto.getNomeProduto());
             ps.setInt(3, produto.getQuantidadeProduto());
-            ps.setString(4, produto.getDescricao());
+            ps.setString(4, produto.getCategoria());
             ps.setDouble(5, produto.getValor());
-            ps.setDate(6, produto.getDataProduto());
+            ps.setDate(6, produto.getDataCadastro());
             ps.setString(7, produto.getFilial());
             ps.setInt(8, produto.getIdProduto());
             ps.executeUpdate();
@@ -147,11 +147,11 @@ public class ProdutoDAO {
                 int codigo = rs.getInt("codigo");
                 String nomeProduto = rs.getString("nomeProduto");
                 int quantidadeProduto = rs.getInt("quantidadeProduto");
-                String descricao = rs.getString("descricao");
+                String categoria = rs.getString("categoria");
                 double valor = rs.getDouble("valor");
-                Date dataProduto = rs.getDate("dataProduto");
-                Produto produto = new Produto(idProduto, codigo, nomeProduto, quantidadeProduto, descricao, valor, filial);
-                produto.setDataProduto(dataProduto);
+                Date dataCadastro = rs.getDate("dataCadastro");
+                Produto produto = new Produto(idProduto, codigo, nomeProduto, quantidadeProduto, categoria, valor, filial);
+                produto.setDataCadastro(dataCadastro);
                 produtos.add(produto);
             }
         } catch (SQLException ex) {

@@ -31,9 +31,9 @@ public class ClienteDAO {
                 String cep = rs.getString("cep");
                 String telefone = rs.getString("telefone");
                 String sexo = rs.getString("sexo");
-                Date dataNascimento = rs.getDate("dataNascimento");
+                Date dataCadastro = rs.getDate("dataCadastro");
                 Cliente cliente = new Cliente(id, nome, email, cpf, cep, telefone, sexo);
-                cliente.setDataNascimento(dataNascimento);
+                cliente.setDataCadastro(dataCadastro);
                 clientes.add(cliente);
             }
         } catch (SQLException ex) {
@@ -43,10 +43,10 @@ public class ClienteDAO {
         return clientes;
     }
     
-    public static boolean cadastrar(Cliente cliente, Date dataNascimento){
+    public static boolean cadastrar(Cliente cliente, Date dataCadastro){
         boolean ok = true;
         
-        String query = "insert into cliente (nome, email, cpf, cep, telefone, sexo, dataNascimento) values (?,?,?,?,?,?,?)";
+        String query = "insert into cliente (nome, email, cpf, cep, telefone, sexo, dataCadastro) values (?,?,?,?,?,?,?)";
         Connection con;
         try {
             con = Conexao.getConexao();
@@ -57,7 +57,7 @@ public class ClienteDAO {
             ps.setString(4, cliente.getCep());
             ps.setString(5, cliente.getTelefone());
             ps.setString(6, cliente.getSexo());
-            ps.setDate(7, dataNascimento);
+            ps.setDate(7, dataCadastro);
             ps.executeUpdate();
         } catch (SQLException ex) {
             Logger.getLogger(ClienteDAO.class.getName()).log(Level.SEVERE, null, ex);
@@ -111,7 +111,7 @@ public class ClienteDAO {
     
     public static boolean atualizar(Cliente cliente){
         boolean ok = true;
-        String query = "update cliente set nome=?,email=?,cpf=?,cep=?,telefone=?,sexo=?,dataNascimento=? where id=?";
+        String query = "update cliente set nome=?,email=?,cpf=?,cep=?,telefone=?,sexo=?,dataCadastro=? where id=?";
         Connection con;
         try {
             con = conexao.Conexao.getConexao();
@@ -122,7 +122,7 @@ public class ClienteDAO {
             ps.setString(4, cliente.getCep());
             ps.setString(5, cliente.getTelefone());
             ps.setString(6, cliente.getSexo());
-            ps.setDate(7, cliente.getDataNascimento());
+            ps.setDate(7, cliente.getDataCadastro());
             ps.setInt(8, cliente.getId());
             ps.executeUpdate();
         } catch (SQLException ex) {
@@ -149,9 +149,9 @@ public class ClienteDAO {
                 String cep = rs.getString("cep");
                 String telefone = rs.getString("telefone");
                 String sexo = rs.getString("sexo");
-                Date dataNascimento = rs.getDate("dataNascimento");
+                Date dataCadastro = rs.getDate("dataCadastro");
                 Cliente cliente = new Cliente(id, nome, email, cpf, cep, telefone, sexo);
-                cliente.setDataNascimento(dataNascimento);
+                cliente.setDataCadastro(dataCadastro);
                 clientes.add(cliente);
             }
             

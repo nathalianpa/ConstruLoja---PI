@@ -54,7 +54,7 @@
             <th>CEP</th>
             <th>Telefone</th>
             <th>Sexo</th>
-            <th>Data de Nascimento</th>
+            <th>Data de Cadastro</th>
             
             <c:forEach items="${listaClientes}" var="cliente">
                 <tr>
@@ -65,7 +65,7 @@
                     <td>${cliente.cep}</td>
                     <td>${cliente.telefone}</td>
                     <td>${cliente.sexo}</td>
-                    <td><fmt:formatDate pattern="dd/MM/yyyy" value="${cliente.dataNascimento}"/></td>
+                    <td><fmt:formatDate pattern="dd/MM/yyyy" value="${cliente.dataCadastro}"/></td>
                     
                     <td><a href="AlterarClienteServlet?id=${cliente.id}" class="btn btn-primary">Alterar</a></td>
                     

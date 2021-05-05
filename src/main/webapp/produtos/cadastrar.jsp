@@ -17,8 +17,8 @@
                 <input type="text" class="form-control" name="nome" required="true"><br>
                 <label class="form-label">Quantidade</label><br>
                 <input type="text" class="form-control" name="quantidade" required="true"><br>
-                <label class="form-label">Descrição</label><br>
-                <input type="text" class="form-control" name="descricao" required="true"><br>
+                <label class="form-label">Categoria</label><br>
+                <input type="text" class="form-control" name="categoria" required="true"><br>
                 <label class="form-label">Valor</label><br>
                 <input type="text" class="form-control" name="valor" required="true"><br>
                 <label class="form-label">Data de Cadastro</label><br>
@@ -46,15 +46,15 @@
                 <input type="text" class="form-control" name="nome" required="true" value="${produto.nomeProduto}"><br><br>
                 <label class="form-label">Quantidade</label><br>
                 <input type="text" class="form-control" name="quantidade" required="true" value="${produto.quantidadeProduto}"><br><br>
-                <label class="form-label">Descrição</label><br>
-                <input type="text" class="form-control" name="descricao" required="true" value="${produto.descricao}"><br><br>
+                <label class="form-label">Categoria</label><br>
+                <input type="text" class="form-control" name="categoria" required="true" value="${produto.categoria}"><br><br>
                 <label class="form-label">Valor</label><br>
                 <input type="text" class="form-control" name="valor" required="true" value="${produto.valor}"><br><br>
                 <label class="form-label">Data de Cadastro</label><br>
-                <input type="date" name="dataProduto" required="true" value="${produto.dataProduto}"><br><br>
+                <input type="date" name="dataCadastro" required="true" value="${produto.dataCadastro}"><br><br>
                 <label class="form-label">Filial</label><br>
                 <div>
-                    <select name="filial" id="filial">
+                    <select name="filial" id="filial" value="${produto.filial}>
                         <option value="-">Selecione</option>
                         <option value="SP">SP</option>
                         <option value="RJ">RJ</option>

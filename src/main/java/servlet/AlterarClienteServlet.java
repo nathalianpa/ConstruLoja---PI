@@ -38,7 +38,7 @@ public class AlterarClienteServlet extends HttpServlet {
         Date date = Date.valueOf(dataForm);
         
         Cliente cliente = new Cliente(id, nome, email, cpf, cep, telefone, sexo);
-        cliente.setDataNascimento(date);
+        cliente.setDataCadastro(date);
         boolean ok = ClienteDAO.atualizar(cliente);
         Redirect.sendRedirect(ok, response);
     }

@@ -30,16 +30,16 @@ public class AlterarProdutoServlet extends HttpServlet {
         int codigo = Integer.parseInt(request.getParameter("codigo"));
         String nome = request.getParameter("nome");
         int quantidade = Integer.parseInt(request.getParameter("quantidade"));
-        String descricao = request.getParameter("descricao");
+        String categoria = request.getParameter("categoria");
         double valor = Double.parseDouble(request.getParameter("valor"));
         
-        String dataForm = request.getParameter("dataProduto");
+        String dataForm = request.getParameter("dataCadastro");
         Date data = Date.valueOf(dataForm);
 
         String filial = request.getParameter("filial");
         
-        Produto produto = new Produto(id, codigo, nome, quantidade, descricao, valor, filial);
-        produto.setDataProduto(data);
+        Produto produto = new Produto(id, codigo, nome, quantidade, categoria, valor, filial);
+        produto.setDataCadastro(data);
         boolean ok = ProdutoDAO.atualizar(produto);
         Redirect.sendRedirect(ok, response);
     }

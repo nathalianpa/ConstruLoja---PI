@@ -19,7 +19,7 @@ public class CadastrarProdutoServlet extends HttpServlet {
         int codigo = Integer.parseInt(request.getParameter("codigo"));
         String nome = request.getParameter("nome");
         int quantidade = Integer.parseInt(request.getParameter("quantidade"));
-        String descricao = request.getParameter("descricao");
+        String categoria = request.getParameter("categoria");
         double valor = Double.parseDouble(request.getParameter("valor"));
         
         String dataForm = request.getParameter("data");
@@ -27,8 +27,8 @@ public class CadastrarProdutoServlet extends HttpServlet {
 
         String filial = request.getParameter("filial");
 
-        Produto produto = new Produto(-1, codigo, nome, quantidade, descricao, valor, filial);
-        produto.setDataProduto(data);
+        Produto produto = new Produto(-1, codigo, nome, quantidade, categoria, valor, filial);
+        produto.setDataCadastro(data);
         boolean ok = ProdutoDAO.cadastrar(produto);
         RedirectProduto.sendRedirect(ok, response);
     }

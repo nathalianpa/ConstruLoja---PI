@@ -4,7 +4,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Venda</title>
+        <title>Vendas</title>
     </head>
     <body>
         <div class="container">
@@ -17,16 +17,22 @@
             <div class="row mt-3">
                 <div class="col">
                     <form action="CarregarClientesServlet" method="POST">
-                        <input type="text" name="id" id="id" placeholder="Digite o id do cliente">
-                        <br>
-                        <select name="filial" id="filial" class="mt-2">
-                            <option value="-">Selecione</option>
-                            <option value="SP">SP</option>
-                            <option value="RJ">RJ</option>
-                            <option value="RS">RS</option>
-                        </select>
-                        <br>
-                        <input type="submit" value="Carregar Dados" class="mt-2 btn btn-primary">
+                        <div class="row">
+                            <div class="col-6">
+                                <input type="text" class="form-control" name="id" id="id" placeholder="Digite o id do cliente" required="true">
+                            </div>
+                            <div class="col-4">
+                                <select name="filial" id="filial" class="form-control">
+                                    <option value="-">Selecione</option>
+                                    <option value="SP">SP</option>
+                                    <option value="RJ">RJ</option>
+                                    <option value="RS">RS</option>
+                                </select>
+                            </div>
+                            <div class="col-2">
+                                <input type="submit" value="Carregar Dados" class="btn btn-primary form-control">
+                            </div>
+                        </div>
                     </form>
                 </div>
             </div>
@@ -41,7 +47,7 @@
                         <th>CEP</th>
                         <th>Telefone</th>
                         <th>Sexo</th>
-                        <th>Data de Nascimento</th>
+                        <th>Data de Cadastro</th>
 
                         <c:forEach items="${cliente}" var="cliente">
                             <tr>
@@ -52,7 +58,7 @@
                                 <td>${cliente.cep}</td>
                                 <td>${cliente.telefone}</td>
                                 <td>${cliente.sexo}</td>
-                                <td><fmt:formatDate pattern="dd/MM/yyyy" value="${cliente.dataNascimento}"/></td>
+                                <td><fmt:formatDate pattern="dd/MM/yyyy" value="${cliente.dataCadastro}"/></td>
                             </tr>
                         </c:forEach>
                     </table>
@@ -66,7 +72,7 @@
                         <th>Código</th>
                         <th>Nome</th>
                         <th>Quantidade</th>
-                        <th>Descrição</th>
+                        <th>Categoria</th>
                         <th>Valor</th>
                         <th>Data de Cadastro</th>
                         <th>Filial</th>
@@ -77,9 +83,9 @@
                                 <td>${produto.codigo}</td>
                                 <td>${produto.nomeProduto}</td>
                                 <td>${produto.quantidadeProduto}</td>
-                                <td>${produto.descricao}</td>
+                                <td>${produto.categoria}</td>
                                 <td>${produto.valor}</td>
-                                <td>${produto.dataProduto}</td>
+                                <td>${produto.dataCategoria}</td>
                                 <td>${produto.filial}</td>
                             </tr>
                         </c:forEach>
@@ -112,7 +118,7 @@
                             </div>
                             <div class="col-4">
                                 <label class="form-label">Filial</label><br>
-                                <select name="filial" class="form-control" id="filial">
+                                <select name="filial" class="form-control" id="filial" required="true">
                                     <option value="-">Selecione</option>
                                     <option value="SP">SP</option>
                                     <option value="RJ">RJ</option>

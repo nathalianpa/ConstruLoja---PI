@@ -23,7 +23,7 @@
                 <input type="text" class="form-control" name="telefone" required="true"><br><br>
                 <label class="form-label">Sexo</label><br>
                 <input type="text" class="form-control" name="sexo" required="true"><br><br>
-                <label class="form-label">Data de Nascimento</label><br>
+                <label class="form-label">Data de Cadastro</label><br>
                 <input type="date" name="data" required="true"/><br><br>
                 
                 <button type="submit" class="btn btn-primary">Cadastrar</button>
@@ -44,7 +44,7 @@
             <input type="text" class="form-control" name="telefone" required="true" value="${cliente.telefone}"><br><br>
             <label class="form-label">Sexo</label><br>
             <input type="text" class="form-control" name="sexo" required="true" value="${cliente.sexo}"><br><br>
-            <label class="form-label">Data de Nascimento</label><br>
+            <label class="form-label">Data de Cadastro</label><br>
             <input type="date" name="data" required="true"/><br><br>
             
             <button type="submit"  class="btn btn-primary">Alterar</button>

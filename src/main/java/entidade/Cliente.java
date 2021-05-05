@@ -16,7 +16,7 @@ public class Cliente {
     private String cep;
     private String telefone;
     private String sexo;
-    private Date dataNascimento;
+    private Date dataCadastro;
 
     public Cliente(Integer id, String nome, String email, String cpf, String cep, String telefone, String sexo) {
         this.id = id;

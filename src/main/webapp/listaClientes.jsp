@@ -23,7 +23,7 @@
             function deletarCliente(){
                 var id = $("#idCliente").val();
                 fecharTelaConfirmacao();
-                $.ajax( "ExcluirClienteServlet?id=" + id).done(function() {
+                $.ajax( "ExcluirClienteServlet?idCliente=" + id).done(function() {
                     location.reload();
                 })
                 .fail(function() {
@@ -58,7 +58,7 @@
             
             <c:forEach items="${listaClientes}" var="cliente">
                 <tr>
-                    <td>${cliente.id}</td>
+                    <td>${cliente.idCliente}</td>
                     <td>${cliente.nome}</td>
                     <td>${cliente.email}</td>
                     <td>${cliente.cpf}</td>
@@ -67,9 +67,9 @@
                     <td>${cliente.sexo}</td>
                     <td><fmt:formatDate pattern="dd/MM/yyyy" value="${cliente.dataCadastro}"/></td>
                     
-                    <td><a href="AlterarClienteServlet?id=${cliente.id}" class="btn btn-primary">Alterar</a></td>
+                    <td><a href="AlterarClienteServlet?idCliente=${cliente.idCliente}" class="btn btn-primary">Alterar</a></td>
                     
-                    <td><button type="button" class="btn btn-link" onclick="mostrarTelaConfirmacao('${cliente.nome}', '${cliente.id}')">Excluir</button></td>
+                    <td><button type="button" class="btn btn-link" onclick="mostrarTelaConfirmacao('${cliente.nome}', '${cliente.idCliente}')">Excluir</button></td>
                 </tr>
             </c:forEach>
         </table>

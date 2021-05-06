@@ -31,7 +31,7 @@
         </c:if>
         <c:if test="${not empty cliente}">
             <form action="AlterarClienteServlet" method="POST">
-            <input type="text" class="form-control" name="id" hidden="true" value="${cliente.id}"><br><br>
+            <input type="text" class="form-control" name="idCliente" hidden="true" value="${cliente.idCliente}"><br><br>
             <label class="form-label">Nome</label><br>
             <input type="text" class="form-control" name="nome" required="true" value="${cliente.nome}"><br><br>
             <label class="form-label">Email</label><br>

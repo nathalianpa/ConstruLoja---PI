@@ -24,7 +24,7 @@ public class ClienteDAO {
             PreparedStatement ps = con.prepareStatement(query);
             ResultSet rs = ps.executeQuery();
             while(rs.next()){
-                Integer id = rs.getInt("id");
+                Integer idCliente = rs.getInt("idCliente");
                 String nome = rs.getString("nome");
                 String email = rs.getString("email");
                 String cpf = rs.getString("cpf");
@@ -32,7 +32,7 @@ public class ClienteDAO {
                 String telefone = rs.getString("telefone");
                 String sexo = rs.getString("sexo");
                 Date dataCadastro = rs.getDate("dataCadastro");
-                Cliente cliente = new Cliente(id, nome, email, cpf, cep, telefone, sexo);
+                Cliente cliente = new Cliente(idCliente, nome, email, cpf, cep, telefone, sexo);
                 cliente.setDataCadastro(dataCadastro);
                 clientes.add(cliente);
             }
@@ -67,14 +67,14 @@ public class ClienteDAO {
         return ok;
     }
     
-    public static boolean deletar(Integer id){
+    public static boolean deletar(Integer idCliente){
         boolean ok = true;
-        String query = "delete from cliente where id=?";
+        String query = "delete from cliente where idCliente=?";
         Connection con;
         try {
             con = conexao.Conexao.getConexao();
             PreparedStatement ps = con.prepareStatement(query);
-            ps.setInt(1, id);
+            ps.setInt(1, idCliente);
             ps.executeUpdate();
         } catch (SQLException ex) {
             Logger.getLogger(ClienteDAO.class.getName()).log(Level.SEVERE, null, ex);
@@ -84,14 +84,14 @@ public class ClienteDAO {
         return ok;
     }
     
-    public static Cliente getCliente(Integer id){
+    public static Cliente getCliente(Integer idCliente){
         Cliente cliente = null;
-        String query = "select * from cliente where id=?";
+        String query = "select * from cliente where idCliente=?";
         Connection con;
         try {
             con = conexao.Conexao.getConexao();
             PreparedStatement ps = con.prepareStatement(query);
-            ps.setInt(1, id);
+            ps.setInt(1, idCliente);
             ResultSet rs = ps.executeQuery();
             if (rs.next()) {
                 String nome = rs.getString("nome");
@@ -100,7 +100,7 @@ public class ClienteDAO {
                 String cep = rs.getString("cep");
                 String telefone = rs.getString("telefone");
                 String sexo = rs.getString("sexo");
-                cliente = new Cliente(id, nome, email, cpf, cep, telefone, sexo);
+                cliente = new Cliente(idCliente, nome, email, cpf, cep, telefone, sexo);
             }
         } catch (SQLException ex) {
             Logger.getLogger(ClienteDAO.class.getName()).log(Level.SEVERE, null, ex);
@@ -111,7 +111,7 @@ public class ClienteDAO {
     
     public static boolean atualizar(Cliente cliente){
         boolean ok = true;
-        String query = "update cliente set nome=?,email=?,cpf=?,cep=?,telefone=?,sexo=?,dataCadastro=? where id=?";
+        String query = "update cliente set nome=?,email=?,cpf=?,cep=?,telefone=?,sexo=?,dataCadastro=? where idCliente=?";
         Connection con;
         try {
             con = conexao.Conexao.getConexao();
@@ -123,7 +123,7 @@ public class ClienteDAO {
             ps.setString(5, cliente.getTelefone());
             ps.setString(6, cliente.getSexo());
             ps.setDate(7, cliente.getDataCadastro());
-            ps.setInt(8, cliente.getId());
+            ps.setInt(8, cliente.getIdCliente());
             ps.executeUpdate();
         } catch (SQLException ex) {
             Logger.getLogger(ClienteDAO.class.getName()).log(Level.SEVERE, null, ex);
@@ -133,14 +133,14 @@ public class ClienteDAO {
         return ok;
     }
     
-    public static List<Cliente> getClienteVenda(Integer id){
+    public static List<Cliente> getClienteVenda(Integer idCliente){
         List<Cliente> clientes = new ArrayList<>();
-        String query = "select * from cliente where id=?";
+        String query = "select * from cliente where idCliente=?";
         Connection con;
         try {
             con = conexao.Conexao.getConexao();
             PreparedStatement ps = con.prepareStatement(query);
-            ps.setInt(1, id);
+            ps.setInt(1, idCliente);
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
                 String nome = rs.getString("nome");
@@ -150,7 +150,7 @@ public class ClienteDAO {
                 String telefone = rs.getString("telefone");
                 String sexo = rs.getString("sexo");
                 Date dataCadastro = rs.getDate("dataCadastro");
-                Cliente cliente = new Cliente(id, nome, email, cpf, cep, telefone, sexo);
+                Cliente cliente = new Cliente(idCliente, nome, email, cpf, cep, telefone, sexo);
                 cliente.setDataCadastro(dataCadastro);
                 clientes.add(cliente);
             }

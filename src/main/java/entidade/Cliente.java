@@ -9,7 +9,7 @@ import lombok.Setter;
 @Setter
 public class Cliente {
     
-    private Integer id;
+    private Integer idCliente;
     private String nome;
     private String email;
     private String cpf;
@@ -18,8 +18,8 @@ public class Cliente {
     private String sexo;
     private Date dataCadastro;
 
-    public Cliente(Integer id, String nome, String email, String cpf, String cep, String telefone, String sexo) {
-        this.id = id;
+    public Cliente(Integer idCliente, String nome, String email, String cpf, String cep, String telefone, String sexo) {
+        this.idCliente = idCliente;
         this.nome = nome;
         this.email = email;
         this.cpf = cpf;

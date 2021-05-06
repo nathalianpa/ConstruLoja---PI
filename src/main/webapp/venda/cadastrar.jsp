@@ -85,7 +85,7 @@
                                 <td>${produto.quantidadeProduto}</td>
                                 <td>${produto.categoria}</td>
                                 <td>${produto.valor}</td>
-                                <td>${produto.dataCategoria}</td>
+                                <td>${produto.dataCadastro}</td>
                                 <td>${produto.filial}</td>
                             </tr>
                         </c:forEach>

@@ -16,18 +16,16 @@ public class CadastrarProdutoServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        int codigo = Integer.parseInt(request.getParameter("codigo"));
-        String nome = request.getParameter("nome");
-        int quantidade = Integer.parseInt(request.getParameter("quantidade"));
+        int idFilial = Integer.parseInt(request.getParameter("idFilial"));
+        String nome = request.getParameter("nomeProduto");
+        int quantidade = Integer.parseInt(request.getParameter("quantidadeProduto"));
         String categoria = request.getParameter("categoria");
         double valor = Double.parseDouble(request.getParameter("valor"));
         
-        String dataForm = request.getParameter("data");
+        String dataForm = request.getParameter("dataCadastro");
         Date data = Date.valueOf(dataForm);
 
-        String filial = request.getParameter("filial");
-
-        Produto produto = new Produto(-1, codigo, nome, quantidade, categoria, valor, filial);
+        Produto produto = new Produto(-1, idFilial, nome, quantidade, categoria, valor);
         produto.setDataCadastro(data);
         boolean ok = ProdutoDAO.cadastrar(produto);
         RedirectProduto.sendRedirect(ok, response);

@@ -25,14 +25,13 @@ public class ProdutoDAO {
             ResultSet rs = ps.executeQuery();
             while(rs.next()){
                 int id = rs.getInt("idProduto");
-                int codigo = rs.getInt("codigo");
+                int idFilial = rs.getInt("idFilial");
                 String nomeProduto = rs.getString("nomeProduto");
                 int quantidadeProduto = rs.getInt("quantidadeProduto");
                 String categoria = rs.getString("categoria");
                 double valor = rs.getDouble("valor");
                 Date dataCadastro = rs.getDate("dataCadastro");
-                String filial = rs.getString("filial");
-                Produto produto = new Produto(id, codigo, nomeProduto, quantidadeProduto, categoria, valor, filial);
+                Produto produto = new Produto(id, idFilial, nomeProduto, quantidadeProduto, categoria, valor);
                 produto.setDataCadastro(dataCadastro);
                 produtos.add(produto);
             }
@@ -46,18 +45,17 @@ public class ProdutoDAO {
     public static boolean cadastrar(Produto produto){
         boolean ok = true;
         
-        String query = "insert into Produto (codigo, nomeProduto, quantidadeProduto, categoria, valor, dataCadastro, filial) values (?,?,?,?,?,?,?)";
+        String query = "insert into Produto (idFilial, nomeProduto, quantidadeProduto, categoria, valor, dataCadastro) values (?,?,?,?,?,?)";
         Connection con;
         try {
             con = Conexao.getConexao();
             PreparedStatement ps = con.prepareStatement(query);
-            ps.setInt(1, produto.getCodigo());
+            ps.setInt(1, produto.getIdFilial());
             ps.setString(2, produto.getNomeProduto());
             ps.setInt(3, produto.getQuantidadeProduto());
             ps.setString(4, produto.getCategoria());
             ps.setDouble(5, produto.getValor());
             ps.setDate(6, produto.getDataCadastro());
-            ps.setString(7, produto.getFilial());
             ps.executeUpdate();
         } catch (SQLException ex) {
             Logger.getLogger(ClienteDAO.class.getName()).log(Level.SEVERE, null, ex);
@@ -94,13 +92,14 @@ public class ProdutoDAO {
             ps.setInt(1, idProduto);
             ResultSet rs = ps.executeQuery();
             if (rs.next()) {
-                int codigo = rs.getInt("codigo");
+                int idFilial = rs.getInt("idFilial");
                 String nomeProduto = rs.getString("nomeProduto");
                 int quantidadeProduto = rs.getInt("quantidadeProduto");
                 String categoria = rs.getString("categoria");
                 double valor = rs.getDouble("valor");
-                String filial = rs.getString("filial");
-                produto = new Produto(idProduto, codigo, nomeProduto, quantidadeProduto, categoria, valor, filial);
+                Date dataCadastro = rs.getDate("dataCadastro");
+                produto = new Produto(idProduto, idFilial, nomeProduto, quantidadeProduto, categoria, valor);
+                produto.setDataCadastro(dataCadastro);
             }
         } catch (SQLException ex) {
             Logger.getLogger(ClienteDAO.class.getName()).log(Level.SEVERE, null, ex);
@@ -111,19 +110,18 @@ public class ProdutoDAO {
     
     public static boolean atualizar(Produto produto){
         boolean ok = true;
-        String query = "update Produto set codigo=?,nomeProduto=?,quantidadeProduto=?,categoria=?,valor=?,dataCadastro=?,filial=? where idProduto=?";
+        String query = "update Produto set idFilial=?,nomeProduto=?,quantidadeProduto=?,categoria=?,valor=?,dataCadastro=? where idProduto=?";
         Connection con;
         try {
             con = conexao.Conexao.getConexao();
             PreparedStatement ps = con.prepareStatement(query);
-            ps.setInt(1, produto.getCodigo());
+            ps.setInt(1, produto.getIdFilial());
             ps.setString(2, produto.getNomeProduto());
             ps.setInt(3, produto.getQuantidadeProduto());
             ps.setString(4, produto.getCategoria());
             ps.setDouble(5, produto.getValor());
             ps.setDate(6, produto.getDataCadastro());
-            ps.setString(7, produto.getFilial());
-            ps.setInt(8, produto.getIdProduto());
+            ps.setInt(7, produto.getIdProduto());
             ps.executeUpdate();
         } catch (SQLException ex) {
             Logger.getLogger(ClienteDAO.class.getName()).log(Level.SEVERE, null, ex);
@@ -133,24 +131,23 @@ public class ProdutoDAO {
         return ok;
     }
 
-    public static List<Produto> getFilial(String filial){
+    public static List<Produto> getFilial(int idFilial){
         List<Produto> produtos = new ArrayList<>();
-        String query = "select * from Produto where filial=?";
+        String query = "select * from Produto where idFilial=?";
         Connection con;
         try {
             con = conexao.Conexao.getConexao();
             PreparedStatement ps = con.prepareStatement(query);
-            ps.setString(1, filial);
+            ps.setInt(1, idFilial);
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
                 int idProduto = rs.getInt("idProduto");
-                int codigo = rs.getInt("codigo");
                 String nomeProduto = rs.getString("nomeProduto");
                 int quantidadeProduto = rs.getInt("quantidadeProduto");
                 String categoria = rs.getString("categoria");
                 double valor = rs.getDouble("valor");
                 Date dataCadastro = rs.getDate("dataCadastro");
-                Produto produto = new Produto(idProduto, codigo, nomeProduto, quantidadeProduto, categoria, valor, filial);
+                Produto produto = new Produto(idProduto, idFilial, nomeProduto, quantidadeProduto, categoria, valor);
                 produto.setDataCadastro(dataCadastro);
                 produtos.add(produto);
             }

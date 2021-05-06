@@ -10,26 +10,24 @@ import lombok.Setter;
 public class Produto {
     
     private int idProduto;
-    private int codigo;
+    private int idFilial;
     private String nomeProduto;
     private int quantidadeProduto;
     private String categoria;
     private double valor;
     private Date dataCadastro;
-    private String filial;
 
-    public Produto(int idProduto, int codigo, String nomeProduto, int quantidadeProduto, String categoria, double valor, String filial) {
+    public Produto(int idProduto, int idFilial, String nomeProduto, int quantidadeProduto, String categoria, double valor) {
         this.idProduto = idProduto;
-        this.codigo = codigo;
+        this.idFilial = idFilial;
         this.nomeProduto = nomeProduto;
         this.quantidadeProduto = quantidadeProduto;
         this.categoria = categoria;
         this.valor = valor;
-        this.filial = filial;
     }
 
     @Override
     public String toString() {
-        return "Produto{" + "código=" + codigo + "nome=" + nomeProduto + ", quantidade=" + quantidadeProduto + ", categoria=" + categoria + ", valor=" + valor + '}';
+        return "Produto{" + "idFilial=" + idFilial + "nome=" + nomeProduto + ", quantidade=" + quantidadeProduto + ", categoria=" + categoria + ", valor=" + valor + '}';
     }
 }

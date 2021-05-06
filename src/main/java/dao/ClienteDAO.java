@@ -100,7 +100,9 @@ public class ClienteDAO {
                 String cep = rs.getString("cep");
                 String telefone = rs.getString("telefone");
                 String sexo = rs.getString("sexo");
+                Date dataCadastro = rs.getDate("dataCadastro");
                 cliente = new Cliente(idCliente, nome, email, cpf, cep, telefone, sexo);
+                cliente.setDataCadastro(dataCadastro);
             }
         } catch (SQLException ex) {
             Logger.getLogger(ClienteDAO.class.getName()).log(Level.SEVERE, null, ex);

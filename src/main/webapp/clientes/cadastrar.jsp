@@ -45,7 +45,7 @@
             <label class="form-label">Sexo</label><br>
             <input type="text" class="form-control" name="sexo" required="true" value="${cliente.sexo}"><br><br>
             <label class="form-label">Data de Cadastro</label><br>
-            <input type="date" name="data" required="true"/><br><br>
+            <input type="date" name="data" required="true" value="${cliente.dataCadastro}"/><br><br>
             
             <button type="submit"  class="btn btn-primary">Alterar</button>
         </form>

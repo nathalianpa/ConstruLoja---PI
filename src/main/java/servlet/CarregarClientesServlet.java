@@ -24,7 +24,7 @@ public class CarregarClientesServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         Integer idCliente = Integer.parseInt(request.getParameter("idCliente"));
-        String filial = request.getParameter("filial");
+        int filial = Integer.parseInt(request.getParameter("idFilial"));
         
         List<Cliente> listaClientes = ClienteDAO.getClienteVenda(idCliente);
         List<Produto> listaProdutos = ProdutoDAO.getFilial(filial);

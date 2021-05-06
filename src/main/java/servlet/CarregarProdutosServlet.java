@@ -15,10 +15,10 @@ public class CarregarProdutosServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String filial = request.getParameter("filial");
+        int idFilial = Integer.parseInt(request.getParameter("idFilial"));
         
-        List<Produto> listaProdutos = ProdutoDAO.getFilial(filial);
-        System.out.println(listaProdutos);
+        List<Produto> listaProdutos = ProdutoDAO.getFilial(idFilial);
+        
         request.setAttribute("listaProdutos", listaProdutos);
         
         request.getRequestDispatcher("cadastrar.jsp").forward(request, response);

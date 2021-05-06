@@ -48,24 +48,22 @@
         
         <table class="table table-hover">
             <th>Id</th>
-            <th>Código</th>
+            <th>Id da Filial</th>
             <th>Nome</th>
             <th>Quantidade</th>
             <th>Categoria</th>
             <th>Valor</th>
             <th>Data de Cadastro</th>
-            <th>Filial</th>
             
             <c:forEach items="${listaProdutos}" var="produto">
                 <tr>
                     <td>${produto.idProduto}</td>
-                    <td>${produto.codigo}</td>
+                    <td>${produto.idFilial}</td>
                     <td>${produto.nomeProduto}</td>
                     <td>${produto.quantidadeProduto}</td>
                     <td>${produto.categoria}</td>
                     <td>${produto.valor}</td>
                     <td>${produto.dataCadastro}</td>
-                    <td>${produto.filial}</td>
                     
                     <td><a href="AlterarProdutoServlet?idProduto=${produto.idProduto}" class="btn btn-primary">Alterar</a></td>
                     

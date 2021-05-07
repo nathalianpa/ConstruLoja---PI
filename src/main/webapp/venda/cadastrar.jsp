@@ -86,52 +86,20 @@
                 </div>
             </div>
             
-            <div class="row mt-3">
+            <div class="row mt-4">
                 <div class="col">
-                    <form action="CarregarClientesServlet" method="POST">
+                    <form action="../produtos/cadastrar.jsp" method="POST">
                         <div class="row">
-                            <div class="col-6">
-                                <label class="form-label">Id do Cliente</label><br>
-                                <input type="text" class="form-control" name="idCliente" required="true"><br>
+                            <div class="col-6 mt-1">
+                                <h4>Digite o ID do Cliente que deseja realizar uma compra:<h1/>
                             </div>
-                            <div class="col-6">
-                                <label class="form-label">Nome do Produto</label><br>
-                                <input type="text" class="form-control" name="nomeProduto" required="true"><br>
+                            <div class="col">
+                                <input type="text" class="form-control" name="idCliente" id="idCliente" required="true"><br>
+                            </div>
+                            <div class="col">
+                                <input type="submit" name="OPA" value="Realizar compra" class="btn btn-primary">
                             </div>
                         </div>
-                        
-                        <div class="row">
-                            <div class="col-4">
-                                 <label class="form-label">Quantidade</label><br>
-                                <input type="text" class="form-control" name="quantidadeProduto" required="true"><br>
-                            </div>
-                            <div class="col-4">
-                                <label class="form-label">Valor Total</label><br>
-                                <input type="text" class="form-control" name="valor" required="true"><br>
-                            </div>
-                            <div class="col-4">
-                                <label class="form-label">Filial</label><br>
-                                <select name="nomeFilial" class="form-control" id="filial" required="true">
-                                    <option value="-">Selecione</option>
-                                    <option value="SP">SP</option>
-                                    <option value="RJ">RJ</option>
-                                    <option value="RS">RS</option>
-                                </select>
-                            </div>
-                        </div>
-                        
-                        <div class="row">
-                            <div class="col-6">
-                                <label class="form-label">Categoria</label><br>
-                                <input type="text" class="form-control" name="categoria" required="true"><br>
-                            </div>
-                            <div class="col-6">
-                                <label class="form-label">Data de Cadastro</label><br>
-                                <input type="date" class="form-control" name="dataCadastro" required="true"><br>
-                            </div>
-                        </div>
-                        
-                        <input type="submit" name="OPA" value="REALIZAR VENDA" class="btn btn-primary">
                     </form>
                 </div>
             </div>

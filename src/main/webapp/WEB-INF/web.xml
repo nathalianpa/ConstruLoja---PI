@@ -33,10 +33,6 @@
         <servlet-class>servlet.AlterarProdutoServlet</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>CarregarClientesServlet</servlet-name>
-        <servlet-class>servlet.CarregarClientesServlet</servlet-class>
-    </servlet>
-    <servlet>
         <servlet-name>RelatorioServlet</servlet-name>
         <servlet-class>servlet.RelatorioServlet</servlet-class>
     </servlet>
@@ -79,10 +75,6 @@
     <servlet-mapping>
         <servlet-name>AlterarProdutoServlet</servlet-name>
         <url-pattern>/AlterarProdutoServlet</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>CarregarClientesServlet</servlet-name>
-        <url-pattern>/venda/CarregarClientesServlet</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>RelatorioServlet</servlet-name>

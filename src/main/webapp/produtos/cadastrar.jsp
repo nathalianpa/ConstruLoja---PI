@@ -11,6 +11,9 @@
         
         <c:if test="${empty produto}">
             <form action="CadastrarProdutoServlet" method="POST">
+                <label class="form-label mt-1" style="font-size: 30px">ID do Cliente</label><br>
+                <input type="text" class="form-control" name="idCliente" required="true" value="${param.idCliente}" readonly="true"><br>
+                
                 <label class="form-label">Nome da Filial</label><br>
                 <input type="text" class="form-control" name="nomeFilial" required="true"><br>
                 <label class="form-label">Nome do Produto</label><br>

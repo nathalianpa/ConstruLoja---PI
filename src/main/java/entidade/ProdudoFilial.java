@@ -12,5 +12,12 @@ import lombok.Setter;
 @Getter
 @Setter
 public class ProdudoFilial {
-
+    private int idProduto;
+    private int idFilial;
+    
+    public ProdutoFilial(int idProduto, int idFilial) {
+        
+        this.idProduto = idProduto;
+        this.idFilial = idFilial;
+    }
 }

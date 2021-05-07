@@ -34,7 +34,10 @@ public class CadastrarProdutoServlet extends HttpServlet {
         produto.setDataCadastro(data);
         boolean ok = ProdutoDAO.cadastrar(produto);
         
-        if(ok && okFilial){
+        ProdutoFilial produtoFilial = new ProdutoFilial(produto.getIdProduto(), filial.getIdFilial());
+        boolean okProdutoFilial = ProdutoFilialDAO.cadastrar(produtoFilial);
+
+        if(ok && okFilial && okProdutoFilial){
             RedirectProduto.sendRedirect(okFilial, response);
         }
     }

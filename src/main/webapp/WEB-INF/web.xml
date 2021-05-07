@@ -44,6 +44,10 @@
         <servlet-name>RelatorioClienteServlet</servlet-name>
         <servlet-class>servlet.RelatorioClienteServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>CarregarDadosServlet</servlet-name>
+        <servlet-class>servlet.CarregarDadosServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ClienteServlet</servlet-name>
         <url-pattern>/ClienteServlet</url-pattern>
@@ -87,6 +91,10 @@
     <servlet-mapping>
         <servlet-name>RelatorioClienteServlet</servlet-name>
         <url-pattern>/relatorio/RelatorioClienteServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CarregarDadosServlet</servlet-name>
+        <url-pattern>/venda/CarregarDadosServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

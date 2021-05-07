@@ -16,73 +16,70 @@
             
             <div class="row mt-3">
                 <div class="col">
-                    <form action="CarregarClientesServlet" method="POST">
+                    <form action="CarregarDadosServlet" method="POST">
                         <div class="row">
-                            <div class="col-5">
-                                <input type="text" class="form-control" name="idCliente" id="idCliente" placeholder="Digite o id do cliente" required="true">
+                            <div class="col-10">
+                                <div class="row">
+                                    <div class="col">
+                                        <table class="table table-hover">
+                                            <th>ID do Cliente</th>
+                                            <th>Nome</th>
+                                            <th>Email</th>
+                                            <th>CPF</th>
+                                            <th>CEP</th>
+                                            <th>Telefone</th>
+                                            <th>Sexo</th>
+                                            <th>Data de Cadastro</th>
+
+                                            <c:forEach items="${cliente}" var="cliente">
+                                                <tr>
+                                                    <td>${cliente.idCliente}</td>
+                                                    <td>${cliente.nome}</td>
+                                                    <td>${cliente.email}</td>
+                                                    <td>${cliente.cpf}</td>
+                                                    <td>${cliente.cep}</td>
+                                                    <td>${cliente.telefone}</td>
+                                                    <td>${cliente.sexo}</td>
+                                                    <td><fmt:formatDate pattern="dd/MM/yyyy" value="${cliente.dataCadastro}"/></td>
+                                                </tr>
+                                            </c:forEach>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <table class="table table-hover">
+                                            <th>ID do Produto</th>
+                                            <th>Nome da Filial</th>
+                                            <th>Nome do Produto</th>
+                                            <th>Quantidade</th>
+                                            <th>Categoria</th>
+                                            <th>Valor</th>
+                                            <th>Data de Cadastro</th>
+
+                                            <c:forEach items="${listaProdutos}" var="produto">
+                                                <tr>
+                                                    <td>${produto.idProduto}</td>
+                                                    <td>${produto.nomeFilial}</td>
+                                                    <td>${produto.nomeProduto}</td>
+                                                    <td>${produto.quantidadeProduto}</td>
+                                                    <td>${produto.categoria}</td>
+                                                    <td>${produto.valor}</td>
+                                                    <td>${produto.dataCadastro}</td>
+                                                </tr>
+                                            </c:forEach>
+                                        </table>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="col-5">
-                                <input type="text" class="form-control" name="idFilial" id="idFilial" placeholder="Digite o id da filial" required="true">
-                            </div>
+                            
                             <div class="col-2">
-                                <input type="submit" value="Carregar Dados" class="btn btn-primary form-control">
+                                <div class="row mt-2">
+                                    <input type="submit" value="Carregar Dados" class="btn btn-primary form-control">
+                                </div>
                             </div>
                         </div>
                     </form>
-                </div>
-            </div>
-
-            <div class="row mt-3">
-                <div class="col">
-                    <table class="table table-hover">
-                        <th>Id do Cliente</th>
-                        <th>Nome</th>
-                        <th>Email</th>
-                        <th>CPF</th>
-                        <th>CEP</th>
-                        <th>Telefone</th>
-                        <th>Sexo</th>
-                        <th>Data de Cadastro</th>
-
-                        <c:forEach items="${cliente}" var="cliente">
-                            <tr>
-                                <td>${cliente.idCliente}</td>
-                                <td>${cliente.nome}</td>
-                                <td>${cliente.email}</td>
-                                <td>${cliente.cpf}</td>
-                                <td>${cliente.cep}</td>
-                                <td>${cliente.telefone}</td>
-                                <td>${cliente.sexo}</td>
-                                <td><fmt:formatDate pattern="dd/MM/yyyy" value="${cliente.dataCadastro}"/></td>
-                            </tr>
-                        </c:forEach>
-                    </table>
-                </div>
-            </div>
-                
-            <div class="row mt-3">
-                <div class="col">
-                    <table class="table table-hover">
-                        <th>Id do Produto</th>
-                        <th>Id da Filial</th>
-                        <th>Nome</th>
-                        <th>Quantidade</th>
-                        <th>Categoria</th>
-                        <th>Valor</th>
-                        <th>Data de Cadastro</th>
-            
-                        <c:forEach items="${listaProdutos}" var="produto">
-                            <tr>
-                                <td>${produto.idProduto}</td>
-                                <td>${produto.idFilial}</td>
-                                <td>${produto.nomeProduto}</td>
-                                <td>${produto.quantidadeProduto}</td>
-                                <td>${produto.categoria}</td>
-                                <td>${produto.valor}</td>
-                                <td>${produto.dataCadastro}</td>
-                            </tr>
-                        </c:forEach>
-                    </table>
                 </div>
             </div>
             

@@ -47,9 +47,10 @@
         </div>
         
         <table class="table table-hover">
-            <th>Id</th>
-            <th>Id da Filial</th>
-            <th>Nome</th>
+            <th>ID</th>
+            <th>ID da Filial</th>
+            <th>Nome da Filial</th>
+            <th>Nome do Produto</th>
             <th>Quantidade</th>
             <th>Categoria</th>
             <th>Valor</th>
@@ -59,6 +60,7 @@
                 <tr>
                     <td>${produto.idProduto}</td>
                     <td>${produto.idFilial}</td>
+                    <td>${produto.nomeFilial}</td>
                     <td>${produto.nomeProduto}</td>
                     <td>${produto.quantidadeProduto}</td>
                     <td>${produto.categoria}</td>

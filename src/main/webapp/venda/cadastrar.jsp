@@ -18,16 +18,11 @@
                 <div class="col">
                     <form action="CarregarClientesServlet" method="POST">
                         <div class="row">
-                            <div class="col-6">
-                                <input type="text" class="form-control" name="id" id="id" placeholder="Digite o id do cliente" required="true">
+                            <div class="col-5">
+                                <input type="text" class="form-control" name="idCliente" id="idCliente" placeholder="Digite o id do cliente" required="true">
                             </div>
-                            <div class="col-4">
-                                <select name="filial" id="filial" class="form-control">
-                                    <option value="-">Selecione</option>
-                                    <option value="SP">SP</option>
-                                    <option value="RJ">RJ</option>
-                                    <option value="RS">RS</option>
-                                </select>
+                            <div class="col-5">
+                                <input type="text" class="form-control" name="idFilial" id="idFilial" placeholder="Digite o id da filial" required="true">
                             </div>
                             <div class="col-2">
                                 <input type="submit" value="Carregar Dados" class="btn btn-primary form-control">
@@ -40,7 +35,7 @@
             <div class="row mt-3">
                 <div class="col">
                     <table class="table table-hover">
-                        <th>Id</th>
+                        <th>Id do Cliente</th>
                         <th>Nome</th>
                         <th>Email</th>
                         <th>CPF</th>
@@ -51,7 +46,7 @@
 
                         <c:forEach items="${cliente}" var="cliente">
                             <tr>
-                                <td>${cliente.id}</td>
+                                <td>${cliente.idCliente}</td>
                                 <td>${cliente.nome}</td>
                                 <td>${cliente.email}</td>
                                 <td>${cliente.cpf}</td>
@@ -68,25 +63,23 @@
             <div class="row mt-3">
                 <div class="col">
                     <table class="table table-hover">
-                        <th>Id</th>
-                        <th>Código</th>
+                        <th>Id do Produto</th>
+                        <th>Id da Filial</th>
                         <th>Nome</th>
                         <th>Quantidade</th>
                         <th>Categoria</th>
                         <th>Valor</th>
                         <th>Data de Cadastro</th>
-                        <th>Filial</th>
             
                         <c:forEach items="${listaProdutos}" var="produto">
                             <tr>
                                 <td>${produto.idProduto}</td>
-                                <td>${produto.codigo}</td>
+                                <td>${produto.idFilial}</td>
                                 <td>${produto.nomeProduto}</td>
                                 <td>${produto.quantidadeProduto}</td>
                                 <td>${produto.categoria}</td>
                                 <td>${produto.valor}</td>
                                 <td>${produto.dataCadastro}</td>
-                                <td>${produto.filial}</td>
                             </tr>
                         </c:forEach>
                     </table>

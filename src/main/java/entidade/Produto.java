@@ -11,15 +11,17 @@ public class Produto {
     
     private int idProduto;
     private int idFilial;
+    private String nomeFilial;
     private String nomeProduto;
     private int quantidadeProduto;
     private String categoria;
     private double valor;
     private Date dataCadastro;
 
-    public Produto(int idProduto, int idFilial, String nomeProduto, int quantidadeProduto, String categoria, double valor) {
+    public Produto(int idProduto, int idFilial, String nomeFilial, String nomeProduto, int quantidadeProduto, String categoria, double valor) {
         this.idProduto = idProduto;
         this.idFilial = idFilial;
+        this.nomeFilial = nomeFilial;
         this.nomeProduto = nomeProduto;
         this.quantidadeProduto = quantidadeProduto;
         this.categoria = categoria;

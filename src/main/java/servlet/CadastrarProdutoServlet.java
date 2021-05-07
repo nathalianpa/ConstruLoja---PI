@@ -1,7 +1,9 @@
 
 package servlet;
 
+import dao.FilialDAO;
 import dao.ProdutoDAO;
+import entidade.Filial;
 import entidade.Produto;
 import java.io.IOException;
 import java.sql.Date;
@@ -17,6 +19,7 @@ public class CadastrarProdutoServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         int idFilial = Integer.parseInt(request.getParameter("idFilial"));
+        String nomeFilial = request.getParameter("nomeFilial");
         String nome = request.getParameter("nomeProduto");
         int quantidade = Integer.parseInt(request.getParameter("quantidadeProduto"));
         String categoria = request.getParameter("categoria");
@@ -25,9 +28,15 @@ public class CadastrarProdutoServlet extends HttpServlet {
         String dataForm = request.getParameter("dataCadastro");
         Date data = Date.valueOf(dataForm);
 
-        Produto produto = new Produto(-1, idFilial, nome, quantidade, categoria, valor);
+        Filial filial = new Filial(idFilial, nomeFilial);
+        boolean okFilial = FilialDAO.cadastrar(filial);
+        
+        Produto produto = new Produto(-1, idFilial, nomeFilial, nome, quantidade, categoria, valor);
         produto.setDataCadastro(data);
         boolean ok = ProdutoDAO.cadastrar(produto);
-        RedirectProduto.sendRedirect(ok, response);
+        
+        if(ok && okFilial){
+            RedirectProduto.sendRedirect(okFilial, response);
+        }
     }
 }

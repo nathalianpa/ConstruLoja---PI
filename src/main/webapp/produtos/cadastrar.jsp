@@ -13,7 +13,9 @@
             <form action="CadastrarProdutoServlet" method="POST">
                 <label class="form-label">ID da Filial</label><br>
                 <input type="text" class="form-control" name="idFilial" required="true"><br>
-                <label class="form-label">Nome</label><br>
+                <label class="form-label">Nome da Filial</label><br>
+                <input type="text" class="form-control" name="nomeFilial" required="true"><br>
+                <label class="form-label">Nome do Produto</label><br>
                 <input type="text" class="form-control" name="nomeProduto" required="true"><br>
                 <label class="form-label">Quantidade</label><br>
                 <input type="text" class="form-control" name="quantidadeProduto" required="true"><br>
@@ -32,6 +34,8 @@
                 <input type="text" name="idProduto" hidden="true" value="${produto.idProduto}"><br><br>
                 <label class="form-label">ID da Filial</label><br>
                 <input type="text" class="form-control" name="idFilial" required="true" value="${produto.idFilial}"><br>
+                <label class="form-label">Nome da Filial</label><br>
+                <input type="text" class="form-control" name="nomeFilial" required="true" value="${produto.nomeFilial}"><br>
                 <label class="form-label">Nome</label><br>
                 <input type="text" class="form-control" name="nomeProduto" required="true" value="${produto.nomeProduto}"><br>
                 <label class="form-label">Quantidade</label><br>

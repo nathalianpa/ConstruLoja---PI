@@ -33,12 +33,20 @@
         <servlet-class>servlet.AlterarProdutoServlet</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>CarregarProdutosServlet</servlet-name>
-        <servlet-class>servlet.CarregarProdutosServlet</servlet-class>
-    </servlet>
-    <servlet>
         <servlet-name>CarregarClientesServlet</servlet-name>
         <servlet-class>servlet.CarregarClientesServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>RelatorioServlet</servlet-name>
+        <servlet-class>servlet.RelatorioServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>RelatorioCategoriaServlet</servlet-name>
+        <servlet-class>servlet.RelatorioCategoriaServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>RelatorioClienteServlet</servlet-name>
+        <servlet-class>servlet.RelatorioClienteServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>ClienteServlet</servlet-name>
@@ -73,12 +81,20 @@
         <url-pattern>/AlterarProdutoServlet</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>CarregarProdutosServlet</servlet-name>
-        <url-pattern>/venda/CarregarProdutosServlet</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
         <servlet-name>CarregarClientesServlet</servlet-name>
         <url-pattern>/venda/CarregarClientesServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>RelatorioServlet</servlet-name>
+        <url-pattern>/relatorio/RelatorioServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>RelatorioCategoriaServlet</servlet-name>
+        <url-pattern>/relatorio/RelatorioCategoriaServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>RelatorioClienteServlet</servlet-name>
+        <url-pattern>/relatorio/RelatorioClienteServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

@@ -88,11 +88,11 @@
             
             <div class="row mt-3">
                 <div class="col">
-                    <form action="CadastrarProdutoServlet" method="POST">
+                    <form action="CarregarClientesServlet" method="POST">
                         <div class="row">
                             <div class="col-6">
-                                <label class="form-label">Nome do Cliente</label><br>
-                                <input type="text" class="form-control" name="cliente" required="true"><br>
+                                <label class="form-label">Id do Cliente</label><br>
+                                <input type="text" class="form-control" name="idCliente" required="true"><br>
                             </div>
                             <div class="col-6">
                                 <label class="form-label">Nome do Produto</label><br>
@@ -103,15 +103,15 @@
                         <div class="row">
                             <div class="col-4">
                                  <label class="form-label">Quantidade</label><br>
-                                <input type="text" class="form-control" name="quantidade" required="true"><br>
+                                <input type="text" class="form-control" name="quantidadeProduto" required="true"><br>
                             </div>
                             <div class="col-4">
                                 <label class="form-label">Valor Total</label><br>
-                                <input type="text" class="form-control" name="valorTotal" required="true"><br>
+                                <input type="text" class="form-control" name="valor" required="true"><br>
                             </div>
                             <div class="col-4">
                                 <label class="form-label">Filial</label><br>
-                                <select name="filial" class="form-control" id="filial" required="true">
+                                <select name="nomeFilial" class="form-control" id="filial" required="true">
                                     <option value="-">Selecione</option>
                                     <option value="SP">SP</option>
                                     <option value="RJ">RJ</option>
@@ -119,12 +119,23 @@
                                 </select>
                             </div>
                         </div>
+                        
+                        <div class="row">
+                            <div class="col-6">
+                                <label class="form-label">Categoria</label><br>
+                                <input type="text" class="form-control" name="categoria" required="true"><br>
+                            </div>
+                            <div class="col-6">
+                                <label class="form-label">Data de Cadastro</label><br>
+                                <input type="date" class="form-control" name="dataCadastro" required="true"><br>
+                            </div>
+                        </div>
+                        
+                        <input type="submit" name="OPA" value="REALIZAR VENDA" class="btn btn-primary">
                     </form>
                 </div>
             </div>
                 
-            <h1>Cliente: ${param.id}</h1>
-
             <div class="row mt-5">
                 <div class="col">
                     <c:import url="../footer.jsp" />

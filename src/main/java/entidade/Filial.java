@@ -8,9 +8,11 @@ import lombok.Setter;
 @Setter
 public class Filial {
     
+    private int idFilial;
     private String nomeFilial;
 
-    public Filial(String nomeFilial) {
+    public Filial(int idFilial, String nomeFilial) {
+        this.idFilial = idFilial;
         this.nomeFilial = nomeFilial;
     }
 }

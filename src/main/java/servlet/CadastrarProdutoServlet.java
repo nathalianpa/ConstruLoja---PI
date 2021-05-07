@@ -27,17 +27,14 @@ public class CadastrarProdutoServlet extends HttpServlet {
         String dataForm = request.getParameter("dataCadastro");
         Date data = Date.valueOf(dataForm);
 
-        Filial filial = new Filial(nomeFilial);
+        Filial filial = new Filial(2, nomeFilial);
         boolean okFilial = FilialDAO.cadastrar(filial);
         
-        Produto produto = new Produto(-1, nomeFilial, nome, quantidade, categoria, valor);
+        Produto produto = new Produto(2, nomeFilial, nome, quantidade, categoria, valor);
         produto.setDataCadastro(data);
         boolean ok = ProdutoDAO.cadastrar(produto);
-        
-        ProdutoFilial produtoFilial = new ProdutoFilial(produto.getIdProduto(), filial.getIdFilial());
-        boolean okProdutoFilial = ProdutoFilialDAO.cadastrar(produtoFilial);
 
-        if(ok && okFilial && okProdutoFilial){
+        if(ok && okFilial){
             RedirectProduto.sendRedirect(okFilial, response);
         }
     }

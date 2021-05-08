@@ -17,10 +17,10 @@
         <a href="clientes/cadastrar.jsp" class="btn btn-primary">Cadastrar Cliente</a>
         <br>
         <br>
-        <a href="ProdutoServlet" class="btn btn-primary">Listar Produtos</a>
+        <a href="EstoqueServlet" class="btn btn-primary">Listar Produtos no Estoque</a>
         <br>
         <br>
-        <a href="produtos/cadastrar.jsp" class="btn btn-primary">Cadastrar Produto</a>
+        <a href="estoque/cadastrar.jsp" class="btn btn-primary">Cadastrar Produto no Estoque</a>
         <br>
         <br>
         <a href="venda/cadastrar.jsp" class="btn btn-primary">Tela de Venda</a>

@@ -48,6 +48,22 @@
         <servlet-name>CarregarDadosServlet</servlet-name>
         <servlet-class>servlet.CarregarDadosServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>CadastrarEstoqueServlet</servlet-name>
+        <servlet-class>servlet.CadastrarEstoqueServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>EstoqueServlet</servlet-name>
+        <servlet-class>servlet.EstoqueServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>AlterarEstoqueServlet</servlet-name>
+        <servlet-class>servlet.AlterarEstoqueServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ExcluirEstoqueServlet</servlet-name>
+        <servlet-class>servlet.ExcluirEstoqueServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ClienteServlet</servlet-name>
         <url-pattern>/ClienteServlet</url-pattern>
@@ -95,6 +111,22 @@
     <servlet-mapping>
         <servlet-name>CarregarDadosServlet</servlet-name>
         <url-pattern>/venda/CarregarDadosServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CadastrarEstoqueServlet</servlet-name>
+        <url-pattern>/estoque/CadastrarEstoqueServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>EstoqueServlet</servlet-name>
+        <url-pattern>/EstoqueServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AlterarEstoqueServlet</servlet-name>
+        <url-pattern>/AlterarEstoqueServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ExcluirEstoqueServlet</servlet-name>
+        <url-pattern>/ExcluirEstoqueServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

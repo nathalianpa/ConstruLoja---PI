@@ -4,17 +4,14 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Cadastrar produto</title>
+        <title>Cadastrar produto no Estoque</title>
     </head>
     <body class="container">
         <c:import url="../header.jsp" />
         
         <c:if test="${empty produto}">
-            <form action="CadastrarProdutoServlet" method="POST">
-                <label class="form-label mt-1" style="font-size: 30px">ID do Cliente</label><br>
-                <input type="text" class="form-control" name="idCliente" required="true" value="${param.idCliente}" ><br>
-                
-                <label class="form-label">Nome da Filial</label><br>
+            <form action="CadastrarEstoqueServlet" method="POST">
+                <label class="form-label mt-2">Nome da Filial</label><br>
                 <input type="text" class="form-control" name="nomeFilial" required="true"><br>
                 <label class="form-label">Nome do Produto</label><br>
                 <input type="text" class="form-control" name="nomeProduto" required="true"><br>
@@ -31,7 +28,7 @@
             </form>
         </c:if>
         <c:if test="${not empty produto}">
-            <form action="AlterarProdutoServlet" method="POST">
+            <form action="AlterarEstoqueServlet" method="POST">
                 <input type="text" name="idProduto" hidden="true" value="${produto.idProduto}"><br><br>
                 <label class="form-label">Nome da Filial</label><br>
                 <input type="text" class="form-control" name="nomeFilial" required="true" value="${produto.nomeFilial}"><br>

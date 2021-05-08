@@ -1,14 +1,8 @@
 
 package servlet;
 
-import dao.FilialDAO;
-import dao.ProdutoDAO;
-import dao.ProdutoFilialDAO;
-import dao.VendaDAO;
-import entidade.Filial;
-import entidade.Produto;
-import entidade.ProdutoFilial;
-import entidade.Venda;
+import dao.EstoqueDAO;
+import entidade.Estoque;
 import java.io.IOException;
 import java.sql.Date;
 import javax.servlet.ServletException;
@@ -16,12 +10,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class CadastrarProdutoServlet extends HttpServlet {
+public class CadastrarEstoqueServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        Integer idCliente = Integer.parseInt(request.getParameter("idCliente"));
         String nomeFilial = request.getParameter("nomeFilial");
         String nome = request.getParameter("nomeProduto");
         int quantidade = Integer.parseInt(request.getParameter("quantidadeProduto"));
@@ -31,20 +24,11 @@ public class CadastrarProdutoServlet extends HttpServlet {
         String dataForm = request.getParameter("dataCadastro");
         Date data = Date.valueOf(dataForm);
         
-        Filial filial = new Filial(1, nomeFilial);
-        boolean okFilial = FilialDAO.cadastrar(filial);
-        
-        Produto produto = new Produto(1, nomeFilial, nome, quantidade, categoria, valor);
+        Estoque produto = new Estoque(1, nomeFilial, nome, quantidade, categoria, valor);
         produto.setDataCadastro(data);
-        boolean ok = ProdutoDAO.cadastrar(produto);
+        boolean ok = EstoqueDAO.cadastrar(produto);
         
-        ProdutoFilial produtoFilial = new ProdutoFilial(1, 1);
-        boolean okProdutoFilial = ProdutoFilialDAO.cadastrar(produtoFilial);
-        
-        Venda venda = new Venda(idCliente, 1);
-        boolean okVenda = VendaDAO.cadastrar(venda);
-        
-        if(okFilial && ok && okProdutoFilial && okVenda){
+        if(ok){
             request.getRequestDispatcher("../sucesso.jsp").forward(request, response);
         }
     }

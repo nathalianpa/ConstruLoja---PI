@@ -64,6 +64,10 @@
         <servlet-name>ExcluirEstoqueServlet</servlet-name>
         <servlet-class>servlet.ExcluirEstoqueServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>CadastrarVendaServlet</servlet-name>
+        <servlet-class>servlet.CadastrarVendaServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ClienteServlet</servlet-name>
         <url-pattern>/ClienteServlet</url-pattern>
@@ -127,6 +131,10 @@
     <servlet-mapping>
         <servlet-name>ExcluirEstoqueServlet</servlet-name>
         <url-pattern>/ExcluirEstoqueServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CadastrarVendaServlet</servlet-name>
+        <url-pattern>/venda/CadastrarVendaServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

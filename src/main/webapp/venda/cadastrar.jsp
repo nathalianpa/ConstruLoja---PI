@@ -85,7 +85,7 @@
             
             <div class="row mt-4">
                 <div class="col">
-                    <form action="../produtos/cadastrar.jsp" method="POST">
+                    <form action="CadastrarVendaServlet" method="POST">
                         <div class="row">
                             <div class="col-6 mt-1">
                                 <h4>Digite o ID do Cliente que deseja realizar uma compra:<h1/>

@@ -12,7 +12,15 @@
         <c:if test="${empty produto}">
             <form action="CadastrarEstoqueServlet" method="POST">
                 <label class="form-label mt-2">Nome da Filial</label><br>
-                <input type="text" class="form-control" name="nomeFilial" required="true"><br>
+                <div>
+                    <select name="nomeFilial" id="nomeFilial" class="form-control" required="true">
+                        <option value="-">Selecione</option>
+                        <option value="SP">SP</option>
+                        <option value="RJ">RJ</option>
+                        <option value="BH">BH</option>
+                    </select>
+                </div>
+                <br>
                 <label class="form-label">Nome do Produto</label><br>
                 <input type="text" class="form-control" name="nomeProduto" required="true"><br>
                 <label class="form-label">Quantidade</label><br>
@@ -31,7 +39,15 @@
             <form action="AlterarEstoqueServlet" method="POST">
                 <input type="text" name="idProduto" hidden="true" value="${produto.idProduto}"><br><br>
                 <label class="form-label">Nome da Filial</label><br>
-                <input type="text" class="form-control" name="nomeFilial" required="true" value="${produto.nomeFilial}"><br>
+                <div>
+                    <select name="nomeFilial" id="nomeFilial" class="form-control" value="${produto.nomeFilial}">
+                        <option value="-">Selecione</option>
+                        <option value="SP">SP</option>
+                        <option value="RJ">RJ</option>
+                        <option value="BH">BH</option>
+                    </select>
+                </div>
+                <br>
                 <label class="form-label">Nome</label><br>
                 <input type="text" class="form-control" name="nomeProduto" required="true" value="${produto.nomeProduto}"><br>
                 <label class="form-label">Quantidade</label><br>

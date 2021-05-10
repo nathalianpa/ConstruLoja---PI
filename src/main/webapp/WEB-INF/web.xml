@@ -90,7 +90,7 @@
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>CadastrarProdutoServlet</servlet-name>
-        <url-pattern>/produtos/CadastrarProdutoServlet</url-pattern>
+        <url-pattern>/venda/CadastrarProdutoServlet</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>ExcluirProdutoServlet</servlet-name>

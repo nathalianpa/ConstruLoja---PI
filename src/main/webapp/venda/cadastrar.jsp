@@ -85,17 +85,29 @@
             
             <div class="row mt-4">
                 <div class="col">
-                    <form action="CadastrarVendaServlet" method="POST">
+                    <form action="CadastrarVendaServlet" >
                         <div class="row">
-                            <div class="col-6 mt-1">
+                            <div class="col mt-1">
                                 <h4>Digite o ID do Cliente que deseja realizar uma compra:<h1/>
                             </div>
                             <div class="col">
                                 <input type="text" class="form-control" name="idCliente" id="idCliente" required="true"><br>
                             </div>
-                            <div class="col">
-                                <input type="submit" name="OPA" value="Realizar compra" class="btn btn-primary">
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col mt-1">
+                                <h4>Digite o ID do Produto que deseja realizar uma compra:<h1/>
                             </div>
+                            <div class="col">
+                                <input type="text" class="form-control" name="idProduto" id="idProduto" required="true"><br>
+                            </div>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col">
+                                <input type="submit" name="OPA" value="Realizar compra" class="btn btn-primary form-control">
+                            </div> 
                         </div>
                     </form>
                 </div>

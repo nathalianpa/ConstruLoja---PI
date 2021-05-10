@@ -11,10 +11,10 @@
         
         <c:if test="${empty produto}">
             <form action="CadastrarProdutoServlet" method="POST">
-                <input type="text" name="idProduto" hidden="true" value="${produto.idProduto}"><br><br>
+                <input type="text" name="idProduto" hidden="true"><br><br>
                 <label class="form-label">Nome da Filial</label><br>
                 <div>
-                    <select name="nomeFilial" id="nomeFilial" class="form-control" value="${produto.nomeFilial}">
+                    <select name="nomeFilial" id="nomeFilial" class="form-control">
                         <option value="-">Selecione</option>
                         <option value="SP">SP</option>
                         <option value="RJ">RJ</option>
@@ -23,22 +23,24 @@
                 </div>
                 <br>
                 <label class="form-label">Nome</label><br>
-                <input type="text" class="form-control" name="nomeProduto" required="true" value="${produto.nomeProduto}"><br>
+                <input type="text" class="form-control" name="nomeProduto" required="true"><br>
                 <label class="form-label">Quantidade</label><br>
-                <input type="text" class="form-control" name="quantidadeProduto" required="true" value="${produto.quantidadeProduto}"><br>
+                <input type="text" class="form-control" name="quantidadeProduto" required="true"><br>
                 <label class="form-label">Categoria</label><br>
-                <input type="text" class="form-control" name="categoria" required="true" value="${produto.categoria}"><br>
+                <input type="text" class="form-control" name="categoria" required="true"><br>
                 <label class="form-label">Valor</label><br>
-                <input type="text" class="form-control" name="valor" required="true" value="${produto.valor}"><br><br>
+                <input type="text" class="form-control" name="valor" required="true"><br><br>
                 <label class="form-label">Data de Cadastro</label><br>
-                <input type="date" name="dataCadastro" required="true" value="${produto.dataCadastro}"><br><br>
+                <input type="date" name="dataCadastro" required="true"><br><br>
                 
                 <button type="submit" class="btn btn-primary">Cadastrar</button>
             </form>
         </c:if>
         <c:if test="${not empty produto}">
-            <form action="AlterarProdutoServlet" method="POST">
+            <form action="CadastrarProdutoServlet" method="POST">
                 <input type="text" name="idProduto" hidden="true" value="${produto.idProduto}"><br><br>
+                <label class="form-label">ID do Cliente</label><br>
+                <input type="text" class="form-control" name="idCliente" required="true" value="${cliente}" readonly="true"><br>
                 <label class="form-label">Nome da Filial</label><br>
                 <div>
                     <select name="nomeFilial" id="nomeFilial" class="form-control" value="${produto.nomeFilial}">
@@ -56,13 +58,11 @@
                 <label class="form-label">Categoria</label><br>
                 <input type="text" class="form-control" name="categoria" required="true" value="${produto.categoria}"><br>
                 <label class="form-label">Valor</label><br>
-                <input type="text" class="form-control" name="valor" required="true" value="${produto.valor}"><br><br>
+                <input type="text" class="form-control" name="valor" required="true" value="${produto.valor}"><br>
                 <label class="form-label">Data de Cadastro</label><br>
                 <input type="date" name="dataCadastro" required="true" value="${produto.dataCadastro}"><br><br>
 
-                <br>
-                
-                <button type="submit" class="btn btn-primary">Alterar</button>
+                <button type="submit" class="btn btn-primary">Cadastrar</button>
             </form>
         </c:if>
 

@@ -42,13 +42,13 @@ public class ProdutoDAO {
         return produtos;
     }
     
-    public static boolean cadastrar(Produto produto){
-        boolean ok = true;
+    public static int cadastrar(Produto produto){
+        int id = 0;
         String query = "insert into Produto (nomeFilial, nomeProduto, quantidadeProduto, categoria, valor, dataCadastro) values (?,?,?,?,?,?)";
         Connection con;
         try {
             con = Conexao.getConexao();
-            PreparedStatement ps = con.prepareStatement(query);
+            PreparedStatement ps = con.prepareStatement(query, PreparedStatement.RETURN_GENERATED_KEYS);
             ps.setString(1, produto.getNomeFilial());
             ps.setString(2, produto.getNomeProduto());
             ps.setInt(3, produto.getQuantidadeProduto());
@@ -56,12 +56,14 @@ public class ProdutoDAO {
             ps.setDouble(5, produto.getValor());
             ps.setDate(6, produto.getDataCadastro());
             ps.executeUpdate();
+            ResultSet rs = ps.getGeneratedKeys();
+            rs.next();
+            id = Integer.parseInt(rs.getString(1));
         } catch (SQLException ex) {
             Logger.getLogger(ClienteDAO.class.getName()).log(Level.SEVERE, null, ex);
-            ok = false;
         }
        
-        return ok;
+        return id;
     }
     
     public static boolean deletar(int id){

@@ -33,21 +33,21 @@ public class CadastrarProdutoServlet extends HttpServlet {
         Date data = Date.valueOf(dataForm);
         
         Filial filial = new Filial(idProduto, nomeFilial);
-        boolean okFilial = FilialDAO.cadastrar(filial);
+        int idFilial = FilialDAO.cadastrar(filial);
         
         double valorTotal = valor * quantidade;
         
         Produto produto = new Produto(idProduto, nomeFilial, nome, quantidade, categoria, valorTotal);
         produto.setDataCadastro(data);
-        boolean ok = ProdutoDAO.cadastrar(produto);
+        int IdProduto = ProdutoDAO.cadastrar(produto);
         
-        ProdutoFilial produtoFilial = new ProdutoFilial(idProduto, idProduto);
-        boolean okProdutoFilial = ProdutoFilialDAO.cadastrar(produtoFilial);
+        ProdutoFilial produtoFilial = new ProdutoFilial(IdProduto, idFilial);
+        int idProdutoFilial = ProdutoFilialDAO.cadastrar(produtoFilial);
         
-        Venda venda = new Venda(idCliente, 1);
+        Venda venda = new Venda(idCliente, idProdutoFilial);
         boolean okVenda = VendaDAO.cadastrar(venda);
         
-        if(okFilial && ok && okProdutoFilial && okVenda){
+        if(okVenda){
             request.getRequestDispatcher("../sucesso.jsp").forward(request, response);
         }
     }

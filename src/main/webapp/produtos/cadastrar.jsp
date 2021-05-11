@@ -14,7 +14,7 @@
                 <input type="text" name="idProduto" hidden="true"><br><br>
                 <label class="form-label">Nome da Filial</label><br>
                 <div>
-                    <select name="nomeFilial" id="nomeFilial" class="form-control">
+                    <select name="nomeFilial" id="nomeFilial" class="form-control" required="true">
                         <option value="-">Selecione</option>
                         <option value="SP">SP</option>
                         <option value="RJ">RJ</option>

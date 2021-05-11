@@ -19,7 +19,7 @@ public class RelatorioServlet extends HttpServlet {
         Date dataInicial = Date.valueOf(dataInicio);
         Date dataFinal = Date.valueOf(dataFim);
         
-        int quantidade = VendaDAO.getFilial(dataInicial, dataFinal);
+        double quantidade = VendaDAO.getFilial(dataInicial, dataFinal);
         
         request.setAttribute("quantidade", quantidade);
         

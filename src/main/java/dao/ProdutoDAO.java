@@ -44,7 +44,6 @@ public class ProdutoDAO {
     
     public static boolean cadastrar(Produto produto){
         boolean ok = true;
-        
         String query = "insert into Produto (nomeFilial, nomeProduto, quantidadeProduto, categoria, valor, dataCadastro) values (?,?,?,?,?,?)";
         Connection con;
         try {

@@ -54,7 +54,7 @@
                         <h1 id="h1">Escreva uma categoria para listar a quantidade de produto vendida</h1>
                     </div> 
                     <div class="col">
-                        <input type="text" class="form-control" name="categoria">
+                        <input type="text" class="form-control" name="categoria" id="categoria">
                     </div>
                 </div>
 

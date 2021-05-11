@@ -11,7 +11,7 @@
     
         <table class="table table-hover">
             
-            <th>Quantidade</th>
+            <th>Valor Total</th>
             
                 <tr>
                     <td>${quantidade}</td>

@@ -15,7 +15,7 @@ public class RelatorioCategoriaServlet extends HttpServlet {
             throws ServletException, IOException {
         String categoria = request.getParameter("categoria");
         
-        int quantidade = VendaDAO.getCategoria(categoria);
+        double quantidade = VendaDAO.getCategoria(categoria);
         
         request.setAttribute("quantidade", quantidade);
         

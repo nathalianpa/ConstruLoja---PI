@@ -21,6 +21,7 @@ public class CadastrarProdutoServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        Integer idProduto = Integer.parseInt(request.getParameter("idProduto"));
         Integer idCliente = Integer.parseInt(request.getParameter("idCliente"));
         String nomeFilial = request.getParameter("nomeFilial");
         String nome = request.getParameter("nomeProduto");
@@ -31,14 +32,16 @@ public class CadastrarProdutoServlet extends HttpServlet {
         String dataForm = request.getParameter("dataCadastro");
         Date data = Date.valueOf(dataForm);
         
-        Filial filial = new Filial(1, nomeFilial);
+        Filial filial = new Filial(idProduto, nomeFilial);
         boolean okFilial = FilialDAO.cadastrar(filial);
         
-        Produto produto = new Produto(1, nomeFilial, nome, quantidade, categoria, valor);
+        double valorTotal = valor * quantidade;
+        
+        Produto produto = new Produto(idProduto, nomeFilial, nome, quantidade, categoria, valorTotal);
         produto.setDataCadastro(data);
         boolean ok = ProdutoDAO.cadastrar(produto);
         
-        ProdutoFilial produtoFilial = new ProdutoFilial(1, 1);
+        ProdutoFilial produtoFilial = new ProdutoFilial(idProduto, idProduto);
         boolean okProdutoFilial = ProdutoFilialDAO.cadastrar(produtoFilial);
         
         Venda venda = new Venda(idCliente, 1);

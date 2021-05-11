@@ -43,7 +43,7 @@
                 <input type="text" class="form-control" name="idCliente" required="true" value="${cliente}" readonly="true"><br>
                 <label class="form-label">Nome da Filial</label><br>
                 <div>
-                    <select name="nomeFilial" id="nomeFilial" class="form-control" value="${produto.nomeFilial}">
+                    <select name="nomeFilial" id="nomeFilial" class="form-control" required="true" value="${produto.nomeFilial}">
                         <option value="-">Selecione</option>
                         <option value="SP">SP</option>
                         <option value="RJ">RJ</option>

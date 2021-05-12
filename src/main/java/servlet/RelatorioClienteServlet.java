@@ -1,7 +1,7 @@
 
 package servlet;
 
-import dao.VendaDAO;
+import dao.VendasDAO;
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -15,7 +15,7 @@ public class RelatorioClienteServlet extends HttpServlet {
             throws ServletException, IOException {
         int idCliente = Integer.parseInt(request.getParameter("idCliente"));
         
-        int quantidade = VendaDAO.getCliente(idCliente);
+        int quantidade = VendasDAO.getCliente(idCliente);
         
         request.setAttribute("quantidade", quantidade);
         

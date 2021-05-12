@@ -41,15 +41,9 @@
                 <input type="text" name="idProduto" hidden="true" value="${produto.idProduto}"><br><br>
                 <label class="form-label">ID do Cliente</label><br>
                 <input type="text" class="form-control" name="idCliente" required="true" value="${cliente}" readonly="true"><br>
+                
                 <label class="form-label">Nome da Filial</label><br>
-                <div>
-                    <select name="nomeFilial" id="nomeFilial" class="form-control" required="true" value="${produto.nomeFilial}">
-                        <option value="-">Selecione</option>
-                        <option value="SP">SP</option>
-                        <option value="RJ">RJ</option>
-                        <option value="BH">BH</option>
-                    </select>
-                </div>
+                <input type="text" class="form-control" name="nomeFilial" required="true" value="${produto.nomeFilial}" readonly="true">
                 <br>
                 <label class="form-label">Nome</label><br>
                 <input type="text" class="form-control" name="nomeProduto" required="true" value="${produto.nomeProduto}"><br>

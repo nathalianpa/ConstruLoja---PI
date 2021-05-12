@@ -1,7 +1,7 @@
 
 package servlet;
 
-import dao.VendaDAO;
+import dao.VendasDAO;
 import java.io.IOException;
 import java.sql.Date;
 import javax.servlet.ServletException;
@@ -14,12 +14,13 @@ public class RelatorioServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        String nomeFilial = request.getParameter("nomeFilial");
         String dataInicio = request.getParameter("dataInicio");
         String dataFim = request.getParameter("dataFim");
         Date dataInicial = Date.valueOf(dataInicio);
         Date dataFinal = Date.valueOf(dataFim);
         
-        double quantidade = VendaDAO.getFilial(dataInicial, dataFinal);
+        double quantidade = VendasDAO.getFilial(dataInicial, dataFinal, nomeFilial);
         
         request.setAttribute("quantidade", quantidade);
         

@@ -39,6 +39,18 @@
                 </div>
                 
                 <div class="row mt-3">
+                    <div class="col">
+                        <h1>Digite o nome da filial</h1>
+                    </div>
+                </div>
+                
+                <div class="row mt-3">
+                    <div class="col">
+                        <input type="text" class="form-control" name="nomeFilial">
+                    </div>
+                </div>
+                
+                <div class="row mt-3">
                     <div class="col-9">
                         <h1 id="h1">Listar a quantidade de produto vendido por filial:</h1>
                     </div>

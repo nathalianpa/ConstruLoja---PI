@@ -17,7 +17,6 @@ public class CadastrarVendaServlet extends HttpServlet {
         Integer idCliente = Integer.parseInt(request.getParameter("idCliente"));
         Integer idProduto = Integer.parseInt(request.getParameter("idProduto"));
         Estoque produto = EstoqueDAO.getEstoque(idProduto);
-        
         request.setAttribute("produto", produto);
         request.setAttribute("cliente", idCliente);
         request.getRequestDispatcher("/produtos/cadastrar.jsp").forward(request, response);

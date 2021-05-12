@@ -1,7 +1,7 @@
 
 package servlet;
 
-import dao.VendaDAO;
+import dao.VendasDAO;
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -15,7 +15,7 @@ public class RelatorioCategoriaServlet extends HttpServlet {
             throws ServletException, IOException {
         String categoria = request.getParameter("categoria");
         
-        double quantidade = VendaDAO.getCategoria(categoria);
+        double quantidade = VendasDAO.getCategoria(categoria);
         
         request.setAttribute("quantidade", quantidade);
         

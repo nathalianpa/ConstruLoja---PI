@@ -4,11 +4,11 @@ package servlet;
 import dao.FilialDAO;
 import dao.ProdutoDAO;
 import dao.ProdutoFilialDAO;
-import dao.VendaDAO;
+import dao.VendasDAO;
 import entidade.Filial;
 import entidade.Produto;
 import entidade.ProdutoFilial;
-import entidade.Venda;
+import entidade.Vendas;
 import java.io.IOException;
 import java.sql.Date;
 import javax.servlet.ServletException;
@@ -44,8 +44,8 @@ public class CadastrarProdutoServlet extends HttpServlet {
         ProdutoFilial produtoFilial = new ProdutoFilial(IdProduto, idFilial);
         int idProdutoFilial = ProdutoFilialDAO.cadastrar(produtoFilial);
         
-        Venda venda = new Venda(idCliente, idProdutoFilial);
-        boolean okVenda = VendaDAO.cadastrar(venda);
+        Vendas venda = new Vendas(idCliente, idProdutoFilial);
+        boolean okVenda = VendasDAO.cadastrar(venda);
         
         if(okVenda){
             request.getRequestDispatcher("../sucesso.jsp").forward(request, response);

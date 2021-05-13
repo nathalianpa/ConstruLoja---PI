@@ -10,14 +10,12 @@
         <c:import url="header.jsp" />
     
         <table class="table table-hover">
-            
+            <th>Quantidade</th>
             <th>Valor Total</th>
-            
                 <tr>
                     <td>${quantidade}</td>
+                    <td>${valor}</td>
                 </tr>
-            
-            
         </table>
         
         <c:import url="footer.jsp" />

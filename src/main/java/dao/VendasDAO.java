@@ -56,6 +56,30 @@ public class VendasDAO {
         return valor;
     }
     
+    public static int getFilialQuantidade(Date dataInicial, Date dataFinal, String filial){
+        int valor = 0;
+        String query = "select sum(Produto.quantidadeProduto) from Produto inner JOIN Filial ON Filial.idFilial = Produto.idProduto where Produto.dataCadastro between ? and ? and Produto.nomeFilial like ?";
+        Connection con;
+        try {
+            con = conexao.Conexao.getConexao();
+            PreparedStatement ps = con.prepareStatement(query);
+            ps.setDate(1, dataInicial);
+            ps.setDate(2, dataFinal);
+            ps.setString(3, filial);
+            ResultSet rs = ps.executeQuery();
+            rs.next();
+            if(rs.getString(1) == null){
+                valor = 0;
+            }else{
+                valor = Integer.parseInt(rs.getString(1));
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(ClienteDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        return valor;
+    }
+    
     public static int getCliente(int idCliente){
         int quantidade = 0;
         String query = "select count(Cliente.nome) from Cliente INNER JOIN Venda ON Venda.idCliente = Cliente.idCliente where Cliente.idCliente like ?";
@@ -94,5 +118,27 @@ public class VendasDAO {
         }
         
         return valor;
+    }
+    
+    public static int getCategoriaQuantidade(String categoria){
+        int quantidade = 0;
+        String query = "select sum(Produto.quantidadeProduto) from Produto inner JOIN Venda ON Venda.idVenda = Produto.idProduto where Produto.categoria like ?";
+        Connection con;
+        try {
+            con = conexao.Conexao.getConexao();
+            PreparedStatement ps = con.prepareStatement(query);
+            ps.setString(1, categoria);
+            ResultSet rs = ps.executeQuery();
+            rs.next();
+            if(rs.getString(1) == null){
+                quantidade = 0;
+            }else{
+                quantidade = Integer.parseInt(rs.getString(1));
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(ClienteDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        return quantidade;
     }
 }

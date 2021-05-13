@@ -15,8 +15,10 @@ public class RelatorioCategoriaServlet extends HttpServlet {
             throws ServletException, IOException {
         String categoria = request.getParameter("categoria");
         
-        double quantidade = VendasDAO.getCategoria(categoria);
+        double valor = VendasDAO.getCategoria(categoria);
+        int quantidade = VendasDAO.getCategoriaQuantidade(categoria);
         
+        request.setAttribute("valor", valor);
         request.setAttribute("quantidade", quantidade);
         
         request.getRequestDispatcher("/listarVendas.jsp").forward(request, response);

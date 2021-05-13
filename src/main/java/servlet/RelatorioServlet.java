@@ -20,8 +20,10 @@ public class RelatorioServlet extends HttpServlet {
         Date dataInicial = Date.valueOf(dataInicio);
         Date dataFinal = Date.valueOf(dataFim);
         
-        double quantidade = VendasDAO.getFilial(dataInicial, dataFinal, nomeFilial);
+        double valor = VendasDAO.getFilial(dataInicial, dataFinal, nomeFilial);
+        int quantidade = VendasDAO.getFilialQuantidade(dataInicial, dataFinal, nomeFilial);
         
+        request.setAttribute("valor", valor);
         request.setAttribute("quantidade", quantidade);
         
         request.getRequestDispatcher("/listarVendas.jsp").forward(request, response);

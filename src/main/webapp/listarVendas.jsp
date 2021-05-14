@@ -4,7 +4,8 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+        <title>Relatórios</title>
     </head>
     <body class="container" style="background-color: #F8F8FF">
         <c:import url="header.jsp" />

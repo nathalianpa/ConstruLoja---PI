@@ -37,7 +37,7 @@
         </script>
         
     </head>
-    <body class="container">
+    <body class="container" style="background-color: #F8F8FF">
         <c:import url="header.jsp" />
         
         <h1>Clientes:</h1>
@@ -67,9 +67,9 @@
                     <td>${cliente.sexo}</td>
                     <td><fmt:formatDate pattern="dd/MM/yyyy" value="${cliente.dataCadastro}"/></td>
                     
-                    <td><a href="AlterarClienteServlet?idCliente=${cliente.idCliente}" class="btn btn-primary">Alterar</a></td>
+                    <td><a href="AlterarClienteServlet?idCliente=${cliente.idCliente}" class="btn shadow-lg rounded" style="width:110px; background-color:#F2C70F">Alterar</a></td>
                     
-                    <td><button type="button" class="btn btn-link" onclick="mostrarTelaConfirmacao('${cliente.nome}', '${cliente.idCliente}')">Excluir</button></td>
+                    <td><button type="button" class="btn shadow-lg rounded" style="width:110px; background-color:#F2C70F" onclick="mostrarTelaConfirmacao('${cliente.nome}', '${cliente.idCliente}')">Excluir</button></td>
                 </tr>
             </c:forEach>
         </table>

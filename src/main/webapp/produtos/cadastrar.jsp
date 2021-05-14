@@ -6,7 +6,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Cadastrar produto</title>
     </head>
-    <body class="container">
+    <body class="container" style="background-color: #F8F8FF">
         <c:import url="../header.jsp" />
         
         <c:if test="${empty produto}">
@@ -33,7 +33,7 @@
                 <label class="form-label">Data de Cadastro</label><br>
                 <input type="date" name="dataCadastro" required="true"><br><br>
                 
-                <button type="submit" class="btn btn-primary">Cadastrar</button>
+                <button type="submit" class="btn shadow-lg rounded" style="width:210px; background-color:#F2C70F">Cadastrar</button>
             </form>
         </c:if>
         <c:if test="${not empty produto}">
@@ -56,7 +56,7 @@
                 <label class="form-label">Data de Cadastro</label><br>
                 <input type="date" name="dataCadastro" required="true" value="${produto.dataCadastro}"><br><br>
 
-                <button type="submit" class="btn btn-primary">Cadastrar</button>
+                <button type="submit" class="btn shadow-lg rounded" style="width:210px; background-color:#F2C70F">Cadastrar</button>
             </form>
         </c:if>
 

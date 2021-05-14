@@ -6,7 +6,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Vendas</title>
     </head>
-    <body>
+    <body style="background-color: #F8F8FF">
         <div class="container">
             <div class="row">
                 <div class="col">
@@ -75,7 +75,7 @@
                             
                             <div class="col-2">
                                 <div class="row mt-2">
-                                    <input type="submit" value="Carregar Dados" class="btn btn-primary form-control">
+                                    <input type="submit" value="Carregar Dados" class="btn shadow-lg rounded" style="width:210px; background-color:#F2C70F">
                                 </div>
                             </div>
                         </div>
@@ -106,7 +106,7 @@
                         
                         <div class="row">
                             <div class="col">
-                                <input type="submit" name="OPA" value="Realizar compra" class="btn btn-primary form-control">
+                                <input type="submit" name="OPA" value="Realizar compra" class="btn shadow-lg rounded" style="width:210px; background-color:#F2C70F">
                             </div> 
                         </div>
                     </form>

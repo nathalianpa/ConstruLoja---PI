@@ -7,6 +7,6 @@
         <script src="https://kit.fontawesome.com/88ea60f3ab.js" crossorigin="anonymous"></script>
         <script src="lib/jquery-3.6.0.min.js" type="text/javascript"></script>
     </head>
-    <body>
+    <body style="background-color: #F8F8FF">
     </body>
 </html>

@@ -8,7 +8,7 @@
         <script src="https://kit.fontawesome.com/88ea60f3ab.js" crossorigin="anonymous"></script>
         <title>ERRO</title>
     </head>
-    <body class="container">
+    <body class="container" style="background-color: #F8F8FF">
         <h1 style="color: red">Ops, algo deu errado!</h1>
         
         <a href="<c:url value="/index.jsp"/>"class="btn btn-primary">Voltar</a>

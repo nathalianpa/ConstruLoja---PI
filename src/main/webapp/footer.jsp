@@ -5,8 +5,8 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     </head>
-    <body>
+    <body style="background-color: #F8F8FF">
         <br>
-        <a href="<c:url value="/index.jsp"/>" class="btn btn-primary">Voltar</a>
+        <a href="<c:url value="/index.jsp"/>" class="btn shadow-lg rounded" style="width:210px; background-color:#F2C70F">Voltar</a>
     </body>
 </html>

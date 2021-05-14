@@ -36,7 +36,7 @@
         </script>
         
     </head>
-    <body class="container">
+    <body class="container" style="background-color: #F8F8FF">
         
         <c:import url="header.jsp" />
         
@@ -65,9 +65,9 @@
                     <td>${produto.valor}</td>
                     <td>${produto.dataCadastro}</td>
                     
-                    <td><a href="AlterarEstoqueServlet?idProduto=${produto.idProduto}" class="btn btn-primary">Alterar</a></td>
+                    <td><a href="AlterarEstoqueServlet?idProduto=${produto.idProduto}" class="btn shadow-lg rounded" style="width:110px; background-color:#F2C70F">Alterar</a></td>
                     
-                    <td><button type="button" class="btn btn-link" onclick="mostrarTelaConfirmacao('${produto.nomeProduto}', '${produto.idProduto}')">Excluir</button></td>
+                    <td><button type="button" class="btn shadow-lg rounded" style="width:110px; background-color:#F2C70F" onclick="mostrarTelaConfirmacao('${produto.nomeProduto}', '${produto.idProduto}')">Excluir</button></td>
                 </tr>
             </c:forEach>
         </table>

@@ -39,7 +39,7 @@
                         <input type="text" class="form-control" name="nomeFilial" required="true" placeholder="Digite o nome da Filial">
                     </div>
                     <div class="col">
-                        <button type="submit" class="btn btn-primary">Listar a quantidade de produto vendida por Filial</button>
+                        <button type="submit" class="btn shadow-lg rounded" style="width:420px; background-color:#F2C70F">Listar a quantidade de produto vendida por Filial</button>
                     </div>
                 </div>
             </form>
@@ -56,7 +56,7 @@
                         <input type="text" class="form-control" name="categoria" placeholder="Digite uma categoria" required="true">
                     </div>
                     <div class="col">
-                       <button type="submit" class="btn btn-primary">Listar a quantidade de produto vendido pela categoria</button>
+                       <button type="submit" class="btn shadow-lg rounded" style="width:420px; background-color:#F2C70F">Listar a quantidade de produto vendido pela categoria</button>
                     </div>
                 </div>
             </form>
@@ -74,7 +74,7 @@
                         <input type="text" class="form-control" name="idCliente" required="true" placeholder="Digite o ID do cliente">
                     </div>
                     <div class="col">
-                       <button type="submit" class="btn btn-primary">Listar a quantidade de produto comprado pelo cliente</button>
+                       <button type="submit" class="btn shadow-lg rounded" style="width:420px; background-color:#F2C70F">Listar a quantidade de produto comprado pelo cliente</button>
                     </div>
                 </div>
             </form>

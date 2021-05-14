@@ -6,7 +6,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
     </head>
-    <body class="container">
+    <body class="container" style="background-color: #F8F8FF">
         <c:import url="header.jsp" />
     
         <table class="table table-hover">

@@ -9,13 +9,13 @@
     <body class="container" style="background-color: #F8F8FF">
         <c:import url="header.jsp" />
         
-        <div class="row justify-content-center">
-            <div class="col-5">
+        <div class="row">
+            <div class="col text-center">
                 <img src="Logotipo.png" alt="logotipo">
             </div>         
         </div>
-        <div class="row justify-content-center">            
-            <div class="col-7 mt-4 mb-4">
+        <div class="row">            
+            <div class="col text-center mt-4 mb-4">
                 <h1 style="font-family:Verdana">Gerenciamento de atividades</h1>
             </div>   
         </div>

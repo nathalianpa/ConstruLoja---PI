@@ -1,0 +1,84 @@
+create database construlojaPI;
+
+drop table Produto_filial;
+drop table Cliente;
+drop table Produto;
+drop table Venda;
+drop table filial;
+
+create table Cliente (
+    idCliente int not null auto_increment primary key,
+    nome varchar(150) not null,
+    email varchar(150) not null,
+    cpf varchar(15) not null,
+    cep varchar(15) not null,
+    telefone varchar(15) not null,
+    sexo varchar(15) not null,
+    dataCadastro date not null
+);
+
+create table Filial(
+    idFilial int not null auto_increment primary key,
+    nome varchar(100) not null
+);
+
+create table Produto (
+    idProduto int not null auto_increment primary key,
+    nomeFilial varchar(150) not null,
+    nomeProduto varchar(150) not null,
+    quantidadeProduto int not null,
+    categoria varchar(150) not null,
+    valor double not null,
+    dataCadastro date not null
+);
+
+select * from Produto where idFilial=3;
+
+create table Produto_filial (
+    idProdutoFilial int not null auto_increment primary key,
+    idProduto int not null,
+    idFilial int not null,
+    foreign key (idFilial) references Filial(idFilial),
+    foreign key (idProduto) references Produto(idProduto)
+);
+ 
+create table Venda (
+    idVenda int not null auto_increment primary key,
+    idCliente int not null,
+    idProdutoFilial int not null,
+    Valor_de_Venda double(10,2),
+    foreign key (idCliente) references Cliente(idCliente),
+    foreign key (idProdutoFilial) references Produto_filial(idProdutoFilial)
+);
+
+select * from Produto_filial;
+select * from Cliente;
+select * from Filial;
+select * from Produto;
+select * from Venda;
+
+
+
+insert into cliente (nome, email, cpf, cep, telefone, sexo, dataCadastro) values ('wesley','wesleyemail','123456789','123456','159489','macho','2021/05/05');
+insert into Produto (nomeFilial, nomeProduto, quantidadeProduto, categoria, valor, dataCadastro) values ('São Paulo','martelo', 10,'ferramentas',50.00,'2020/05/20');
+insert into Filial (nome) values('Rio de janeiro');
+insert into Produto_filial(idProduto,idFilial) values ('1','1');
+insert into Venda(idCliente, idProdutoFilial, Valor_de_Venda) values (1,1,'25.00');
+
+select idProduto, idVenda from Produto_filial inner join Venda on Produto_filial.idProduto =  Venda.idProdutoFilial;
+
+/* listar a quantidade vendida da filial durante um período */
+select count(Produto.quantidadeProduto) from Produto inner JOIN Filial ON Filial.idFilial = Produto.idProduto where Produto.dataCadastro between '2020/05/05' and '2020/05/20'; /* total vendido por data*/
+select count(Produto.quantidadeProduto) from Produto inner JOIN Filial ON Filial.idFilial = Produto.idProduto; /* total vendido */
+
+/* listar a quantidade de produto vendido pela categoria */
+select count(Produto.quantidadeProduto) from Produto inner JOIN Venda ON Venda.idVenda = Produto.idProduto where Produto.categoria like "prego";
+
+/* listar quanto um cliente comprou */
+select sum(Venda.Valor_de_Venda) from Venda INNER JOIN cliente ON Venda.idCliente = Cliente.idCliente where Cliente.idCliente like "1";
+
+
+SELECT Produto.quantidadeProduto, Venda.idProdutoFilial
+FROM Produto INNER JOIN Venda ON Venda.idVenda = Produto.idProduto
+INNER JOIN Produto_filial ON Venda.idProdutoFilial = Produto_filial.idProduto
+ORDER BY Produto.quantidadeProduto DESC;

@@ -7,6 +7,6 @@
     </head>
     <body style="background-color: #F8F8FF">
         <br>
-        <a href="<c:url value="/index.jsp"/>" class="btn shadow-lg rounded" style="width:210px; background-color:#F2C70F">Voltar</a>
+        <a href="<c:url value="/menu.jsp"/>" class="btn shadow-lg rounded" style="width:210px; background-color:#F2C70F">Voltar</a>
     </body>
 </html>

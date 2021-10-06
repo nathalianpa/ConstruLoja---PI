@@ -32,6 +32,8 @@
                 <input type="text" class="form-control" name="valor" required="true"><br><br>
                 <label class="form-label">Data de Cadastro</label><br>
                 <input type="date" name="dataCadastro" required="true"><br><br>
+                <label class="form-label">Insira a Imagem</label><br>
+                <input class="form-control" type="file" id="formFile"><br><br>
                 
                 <button type="submit" class="btn shadow-lg rounded" style="width:210px; background-color:#F2C70F">Cadastrar</button>
             </form>
@@ -59,7 +61,8 @@
                 <input type="text" class="form-control" name="valor" required="true" value="${produto.valor}"><br><br>
                 <label class="form-label">Data de Cadastro</label><br>
                 <input type="date" name="dataCadastro" required="true" value="${produto.dataCadastro}"><br><br>
-
+                <label class="form-label">Insira a Imagem</label><br>
+                <input class="form-control" type="file" id="formFile"><br><br>
                 <br>
                 
                 <button type="submit" class="btn shadow-lg rounded" style="width:210px; background-color:#F2C70F">Alterar</button>

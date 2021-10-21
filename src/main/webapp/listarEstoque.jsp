@@ -49,20 +49,20 @@
         
         <table class="table table-hover">
             <th>ID</th>
-            <th>Nome da Filial</th>
             <th>Nome do Produto</th>
             <th>Quantidade</th>
             <th>Categoria</th>
+            <th>Imagem</th>
             <th>Valor</th>
             <th>Data de Cadastro</th>
             
             <c:forEach items="${listaProdutos}" var="produto">
                 <tr>
                     <td>${produto.idProduto}</td>
-                    <td>${produto.nomeFilial}</td>
                     <td>${produto.nomeProduto}</td>
                     <td>${produto.quantidadeProduto}</td>
                     <td>${produto.categoria}</td>
+                    <td>${produto.imagem}</td>
                     <td>${produto.valor}</td>
                     <td>${produto.dataCadastro}</td>
                     

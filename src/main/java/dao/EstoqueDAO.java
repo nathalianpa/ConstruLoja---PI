@@ -25,13 +25,13 @@ public class EstoqueDAO {
             ResultSet rs = ps.executeQuery();
             while(rs.next()){
                 int id = rs.getInt("idProduto");
-                String nomeFilial = rs.getString("nomeFilial");
                 String nomeProduto = rs.getString("nomeProduto");
                 int quantidadeProduto = rs.getInt("quantidadeProduto");
                 String categoria = rs.getString("categoria");
+                String imagem = rs.getString("imagem");
                 double valor = rs.getDouble("valor");
                 Date dataCadastro = rs.getDate("dataCadastro");
-                Estoque produto = new Estoque(id, nomeFilial, nomeProduto, quantidadeProduto, categoria, valor);
+                Estoque produto = new Estoque(id, nomeProduto, quantidadeProduto, categoria,imagem, valor);
                 produto.setDataCadastro(dataCadastro);
                 produtos.add(produto);
             }
@@ -45,15 +45,15 @@ public class EstoqueDAO {
     public static boolean cadastrar(Estoque estoque){
         boolean ok = true;
         
-        String query = "insert into Estoque (nomeFilial, nomeProduto, quantidadeProduto, categoria, valor, dataCadastro) values (?,?,?,?,?,?)";
+        String query = "insert into Estoque (nomeProduto, quantidadeProduto, categoria, imagem, valor, dataCadastro) values (?,?,?,?,?,?)";
         Connection con;
         try {
             con = Conexao.getConexao();
             PreparedStatement ps = con.prepareStatement(query);
-            ps.setString(1, estoque.getNomeFilial());
-            ps.setString(2, estoque.getNomeProduto());
-            ps.setInt(3, estoque.getQuantidadeProduto());
-            ps.setString(4, estoque.getCategoria());
+            ps.setString(1, estoque.getNomeProduto());
+            ps.setInt(2, estoque.getQuantidadeProduto());
+            ps.setString(3, estoque.getCategoria());
+            ps.setString(4, estoque.getImagem());
             ps.setDouble(5, estoque.getValor());
             ps.setDate(6, estoque.getDataCadastro());
             ps.executeUpdate();
@@ -92,13 +92,13 @@ public class EstoqueDAO {
             ps.setInt(1, idProduto);
             ResultSet rs = ps.executeQuery();
             if (rs.next()) {
-                String nomeFilial = rs.getString("nomeFilial");
                 String nomeProduto = rs.getString("nomeProduto");
                 int quantidadeProduto = rs.getInt("quantidadeProduto");
                 String categoria = rs.getString("categoria");
+                String imagem = rs.getString("imagem");
                 double valor = rs.getDouble("valor");
                 Date dataCadastro = rs.getDate("dataCadastro");
-                produto = new Estoque(idProduto, nomeFilial, nomeProduto, quantidadeProduto, categoria, valor);
+                produto = new Estoque(idProduto,nomeProduto, quantidadeProduto, categoria, imagem, valor);
                 produto.setDataCadastro(dataCadastro);
             }
         } catch (SQLException ex) {
@@ -110,15 +110,15 @@ public class EstoqueDAO {
     
     public static boolean atualizar(Estoque estoque){
         boolean ok = true;
-        String query = "update Estoque set nomeFilial=?,nomeProduto=?,quantidadeProduto=?,categoria=?,valor=?,dataCadastro=? where idProduto=?";
+        String query = "update Estoque set nomeProduto=?,quantidadeProduto=?,categoria=?,imagem=?,valor=?,dataCadastro=? where idProduto=?";
         Connection con;
         try {
             con = conexao.Conexao.getConexao();
             PreparedStatement ps = con.prepareStatement(query);
-            ps.setString(1, estoque.getNomeFilial());
-            ps.setString(2, estoque.getNomeProduto());
-            ps.setInt(3, estoque.getQuantidadeProduto());
-            ps.setString(4, estoque.getCategoria());
+            ps.setString(1, estoque.getNomeProduto());
+            ps.setInt(2, estoque.getQuantidadeProduto());
+            ps.setString(3, estoque.getCategoria());
+            ps.setString(4, estoque.getImagem());
             ps.setDouble(5, estoque.getValor());
             ps.setDate(6, estoque.getDataCadastro());
             ps.setInt(7, estoque.getIdProduto());
@@ -131,24 +131,23 @@ public class EstoqueDAO {
         return ok;
     }
 
-    public static List<Estoque> getFilial(int idFilial){
+    public static List<Estoque> getProdutoVenda(Integer idProduto){
         List<Estoque> produtos = new ArrayList<>();
-        String query = "select * from Estoque where idFilial=?";
+        String query = "select * from Estoque ";
         Connection con;
         try {
             con = conexao.Conexao.getConexao();
             PreparedStatement ps = con.prepareStatement(query);
-            ps.setInt(1, idFilial);
+            ps.setInt(1, idProduto);
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
-                int idProduto = rs.getInt("idProduto");
-                String nomeFilial = rs.getString("nomeFilial");
                 String nomeProduto = rs.getString("nomeProduto");
                 int quantidadeProduto = rs.getInt("quantidadeProduto");
                 String categoria = rs.getString("categoria");
+                String imagem = rs.getString("imagem");
                 double valor = rs.getDouble("valor");
                 Date dataCadastro = rs.getDate("dataCadastro");
-                Estoque produto = new Estoque(idProduto, nomeFilial, nomeProduto, quantidadeProduto, categoria, valor);
+                Estoque produto = new Estoque(idProduto, nomeProduto, quantidadeProduto, categoria,imagem, valor);
                 produto.setDataCadastro(dataCadastro);
                 produtos.add(produto);
             }

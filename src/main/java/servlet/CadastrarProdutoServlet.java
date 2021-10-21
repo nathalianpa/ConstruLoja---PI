@@ -1,13 +1,13 @@
 
 package servlet;
 
-import dao.FilialDAO;
+
 import dao.ProdutoDAO;
-import dao.ProdutoFilialDAO;
+
 import dao.VendasDAO;
-import entidade.Filial;
+
 import entidade.Produto;
-import entidade.ProdutoFilial;
+
 import entidade.Vendas;
 import java.io.IOException;
 import java.sql.Date;
@@ -23,28 +23,26 @@ public class CadastrarProdutoServlet extends HttpServlet {
             throws ServletException, IOException {
         Integer idProduto = Integer.parseInt(request.getParameter("idProduto"));
         Integer idCliente = Integer.parseInt(request.getParameter("idCliente"));
-        String nomeFilial = request.getParameter("nomeFilial");
         String nome = request.getParameter("nomeProduto");
         int quantidade = Integer.parseInt(request.getParameter("quantidadeProduto"));
         String categoria = request.getParameter("categoria");
+        String imagem = request.getParameter("imagem");
         double valor = Double.parseDouble(request.getParameter("valor"));
         
         String dataForm = request.getParameter("dataCadastro");
         Date data = Date.valueOf(dataForm);
         
-        Filial filial = new Filial(idProduto, nomeFilial);
-        int idFilial = FilialDAO.cadastrar(filial);
+        
         
         double valorTotal = valor * quantidade;
         
-        Produto produto = new Produto(idProduto, nomeFilial, nome, quantidade, categoria, valorTotal);
+        Produto produto = new Produto(idProduto, nome, quantidade, categoria, imagem, valorTotal);
         produto.setDataCadastro(data);
         int IdProduto = ProdutoDAO.cadastrar(produto);
         
-        ProdutoFilial produtoFilial = new ProdutoFilial(IdProduto, idFilial);
-        int idProdutoFilial = ProdutoFilialDAO.cadastrar(produtoFilial);
         
-        Vendas venda = new Vendas(idCliente, idProdutoFilial);
+        
+        Vendas venda = new Vendas(idCliente, idProduto);
         boolean okVenda = VendasDAO.cadastrar(venda);
         
         if(okVenda){

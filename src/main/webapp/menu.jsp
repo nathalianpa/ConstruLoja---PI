@@ -39,16 +39,5 @@
             <a href="estoque/cadastrar.jsp" class="btn shadow-lg rounded" style="width:210px;background-color:#F2C70F">Cadastrar Produto</a>
             </div>
         </div>
-        <div class="row justify-content-center">
-            <div class="col-2 mt-3 mb-2 mx-5">
-                <a href="venda/cadastrar.jsp" class="btn shadow-lg rounded" style="width:210px; background-color:#F2C70F">Tela de Venda</a>
-            </div>
-            <div class="col-2 mt-3 mb-2 mx-5">
-                <a href="relatorio/vendas.jsp" class="btn shadow-lg rounded" style=" width:210px;background-color:#F2C70F">Relatório de Venda</a>
-            </div>
-
-        </div>
-        
-
     </body>
 </html>
